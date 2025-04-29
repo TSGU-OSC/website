@@ -22,3 +22,10 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sh install.sh
 ```
 
+
+##以终端打开一个文件(如.sh文件)没有反应或无效？
+试试在该文件夹目录下打开终端，可以尝试输入如下命令
+```
+chmod +x 你的文件名
+```
+这个命令作用可以理解为给文件赋予执行能力
