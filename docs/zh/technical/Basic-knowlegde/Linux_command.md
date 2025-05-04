@@ -169,10 +169,25 @@ ps：显示当前用户的进程状态。
 ps
 ```
 
+df：显示磁盘使用情况。
+```
+df
+```
+
+iostat：显示磁盘的相关信息。
+```
+iostat
+```
+
 kill ：终止指定进程。
 
 ```
 kill <pid>
+```
+
+which ：查找命令的位置。
+```
+which <command>
 ```
 
 shutdown：关闭系统。
@@ -265,6 +280,11 @@ firewall-cmd --zone=public --query-port=80/tcp
 
 ```
 firewall-cmd --zone=public --remove-port=80/tcp --permanent
+```
+
+curl：发送网络请求。
+```
+curl url
 ```
 
 #### 终端代理加速proxychains4
