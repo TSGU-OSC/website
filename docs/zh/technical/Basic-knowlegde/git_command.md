@@ -437,21 +437,21 @@ git checkout <branch-name>
 ```
 
 
-###获取本地分支最新哈希值
+### 获取本地分支最新哈希值
 
 ```
 git rev-parse HEAD
 ```
 
 
-###获取远程分支最新哈希值
+### 获取远程分支最新哈希值
 
 ```
 git rev-parse origin/<commit_id>
 ```
 
 
-###显示特定提交的详细信息
+### 显示特定提交的详细信息
 
 ```
 git show <commit-hash>
