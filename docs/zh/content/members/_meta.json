@@ -1,0 +1,17 @@
+[
+    {
+      "type": "file",
+      "name": "CurrentMembers",
+      "label": "社团现任成员",
+      "collapsible": "true",
+      "collapsed": "false"
+    },
+    {
+      "type": "file",
+      "name": "PreviousMembers",
+      "label": "社团往届成员",
+      "collapsible": "true",
+      "collapsed": "false"
+    }
+    
+]

@@ -7,9 +7,16 @@
       "collapsed": "false"
     },
     {
+      "type": "dir",
+      "name": "members",
+      "label": "Members",
+      "collapsible": "true",
+      "collapsed": "false"
+    },
+    {
       "type": "file",
-      "name": "member",
-      "label": "Member",
+      "name": "projectOverview",
+      "label": "Project Overview",
       "collapsible": "true",
       "collapsed": "false"
     },

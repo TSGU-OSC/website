@@ -54,3 +54,15 @@
 ### [2024开放原子开发者大会暨首届开源技术学术大会：2024.12.20 - 2024.12.21](https://mp.weixin.qq.com/s/FWJbjCUBKZJgZNIgpsfS7Q)
 
 ### [第十四届deepin开发者与用户大会：2024.12.21](https://mp.weixin.qq.com/s/taldILx_10v0IzH72BQZyQ)
+
+### [开源鸿蒙社2024年度总结——沉淀过往，迎来新光：2025.1.28](https://mp.weixin.qq.com/s/c0JS6S83tA94rPr1bI_EXQ)
+
+### [开源鸿蒙社成员圆满结束鑫谷园面试：2025.3.17](https://mp.weixin.qq.com/s/m5MyFi1SySCbUC3R9rg4Rg)
+
+### [成就表彰|开源鸿蒙社团蓝桥杯省赛喜报：2025.5.14](https://mp.weixin.qq.com/s/tDwE0W4u5AnsYXPRIPVCWw)
+
+### [2025 CANN训练营线下实操圆满收官：Ascend C开发实操赋能AI人才：2025.5.17](https://mp.weixin.qq.com/s/Q6CGXFdyK9kcyh7QWyYOxw)
+
+### [艺术节-开源鸿蒙游园圆满落幕：2025.5.25](https://mp.weixin.qq.com/s/FXx7AlPE7ZtFK9qOr9neXA)
+
+### [智创未来展锋芒，慧通世界启新程—软件通信学院携数智渤海人工智能产学协同论坛圆满落幕：2025.6.20](https://mp.weixin.qq.com/s/zonI_So9IHQo9GGgpw3tZQ)

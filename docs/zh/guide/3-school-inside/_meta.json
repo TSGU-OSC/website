@@ -15,8 +15,8 @@
   },
   {
     "type": "file",
-    "name": "3-School-and-Surrounding",
-    "label": "校园及周边区域",
+    "name": "3-School-situation",
+    "label": "校内情况",
     "collapsible": "true",
     "collapsed": "false"
   },

@@ -1,0 +1,23 @@
+[
+  {
+    "type": "file",
+    "name": "1-School-Surrounding",
+    "label": "Surrounding environment of the campus",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "2-Delicacy",
+    "label": "Off-campus food map",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "3-Scenic-Spots",
+    "label": "Famous off-campus tourist attractions and clocking locations",
+    "collapsible": "true",
+    "collapsed": "false"
+  }
+]

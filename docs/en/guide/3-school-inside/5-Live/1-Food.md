@@ -6,7 +6,9 @@ The school canteen is located in Block L, which is divided into large canteen an
 
 **On the second floor of the canteen** There are two popular drink shops, Kuti and Misue Ice City. Misue Ice City does not take orders at noon every day for lunch break, while Kuti is open during the day. At the same time, the second floor of the canteen also opens a variety of popular snacks, healthy and delicious categories.
 
-**Halal Canteen** is set up separately in Block K commercial street, very close to the large canteen. The Halal canteen is set up to meet the dining conditions and standards of students in need, ensure the purity and safety of ingredients, and also provide milk tea, hamburgers and other snacks for students who follow the halal eating habits to provide peace of mind.
+**Ethnic Canteen** is set up separately in Block K commercial street, very close to the large canteen. The Halal canteen is set up to meet the dining conditions and standards of students in need, ensure the purity and safety of ingredients, and also provide milk tea, hamburgers and other snacks for students who follow the halal eating habits to provide peace of mind.
+
+**The Second Floor of the Ethnic Canteen** It has Luckin Coffee, a bakery, and other outlets inside.
 
 There is a supermarket in Block K commercial Street where students can buy daily necessities, snacks, drinks, fresh fruits, etc.
 

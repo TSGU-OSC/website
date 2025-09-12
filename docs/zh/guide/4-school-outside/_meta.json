@@ -1,0 +1,23 @@
+[
+  {
+    "type": "file",
+    "name": "1-School-Surrounding",
+    "label": "校园周边环境",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "2-Delicacy",
+    "label": "校外的美食地图等",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "3-Scenic-Spots",
+    "label": "校外著名旅游景点和打卡地点",
+    "collapsible": "true",
+    "collapsed": "false"
+  }
+]

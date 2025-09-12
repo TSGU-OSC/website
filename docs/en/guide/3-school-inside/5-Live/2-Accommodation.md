@@ -8,7 +8,7 @@ The university has seven residential buildings, of which most students live in B
 - **M** behind H6.
 (Please refer to campus plan for details)
 
-Each dormitory is equipped with study room, laundry room, hairdryer, vending machine, lavatory, drinking water and other living facilities to meet the needs of students' life, this year in each dormitory building built a new shower, set up in the first floor of each dormitory building.
+Each dormitory is equipped with study room, laundry room, hairdryer, vending machine, lavatory, drinking water and other living facilities to meet the needs of students' life, this year in each dormitory building built a new shower(Hot water will stop around 11 PM, and water will stop at 11:30 PM.), set up in the first floor of each dormitory building.
 
 If furniture or public facilities are found to be damaged or unusable in the dormitory, please promptly request the dormitory administrator aunt for warranty.
 

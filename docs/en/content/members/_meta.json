@@ -1,0 +1,17 @@
+[
+    {
+      "type": "file",
+      "name": "CurrentMembers",
+      "label": "Current members",
+      "collapsible": "true",
+      "collapsed": "false"
+    },
+    {
+      "type": "file",
+      "name": "PreviousMembers",
+      "label": "Previous members",
+      "collapsible": "true",
+      "collapsed": "false"
+    }
+    
+]

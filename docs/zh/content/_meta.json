@@ -7,9 +7,16 @@
       "collapsed": "false"
     },
     {
-      "type": "file",
-      "name": "member",
+      "type": "dir",
+      "name": "members",
       "label": "社团成员",
+      "collapsible": "true",
+      "collapsed": "false"
+    },
+    {
+      "type": "file",
+      "name": "projectOverview",
+      "label": "社团项目总览",
       "collapsible": "true",
       "collapsed": "false"
     },

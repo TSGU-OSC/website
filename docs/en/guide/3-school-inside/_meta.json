@@ -15,8 +15,8 @@
   },
   {
     "type": "file",
-    "name": "3-School-and-Surrounding",
-    "label": "Campus and surrounding area",
+    "name": "3-School-situation",
+    "label": "Campus situation",
     "collapsible": "true",
     "collapsed": "false"
   },
