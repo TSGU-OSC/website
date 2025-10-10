@@ -1,136 +1,145 @@
-# Off-campus food map
+# Off-Campus Food Guide & More  
 
-## 吾悦广场
-- 海底捞
-- 呷哺呷哺
-- CoCo都可
-- 萨莉亚意式餐厅
-- Helens海伦司小酒馆
-- 津创九寸钉·料理级自助炭火烤肉
-- 米村拌饭
-- 和府捞面
-- 比格披萨
-- 川人百味
-- 赵鲜记宝藏鲜牛肉自助火锅
-- 濯港•王婆大虾
-- 小七的魔法厨房
-- 小猪查理川式烤肉自助
-- 那家朝鲜族餐厅
-- 九田家黑牛烤肉料理
-- 齐齐哈尔家庭烤肉
-- luckin coffee 瑞幸咖啡
-- 熊喵来了
-- DQ
-- 酥侯糕点
-- 探鱼·鲜青椒爽麻烤鱼
-- Kim’s kitchen欧巴火锅炸鸡啤酒
-- 旺小巷
-- 干饭湘
-- 1点点
-- 三川日料
-- 茉酸奶
-- 鱼酷活力烤鱼
-- 锅友火锅鸡牛蛙塔
-- 围炉锅盔
-- 佟源记炸肉
-- 双门洞고기집烤肉
-- 甜啦啦鲜果茶
-- 沪上阿姨
-- 半天妖烤鱼
-- COTTI库迪咖啡
-- 华莱士
-- 幸运咖
-- 好利来
-- 茶百道
-- 必胜客
-- 霸王茶姬
-- 塔斯汀中国汉堡
-- 星巴克
+## Campus Surroundings  
+- Akun Fried Rice  
 
-## 永旺梦乐城
-- 米村拌饭
-- 金喜娜韩式自助烤肉
-- 麦当劳
-- 肯德基KFC
-- 津乐园饼屋
-- 喜茶
-- 巴依老爷新疆美食
-- 泸溪河桃酥
-- 必胜客
-- 霸王茶姬
-- 九田家黑牛烤肉料理
-- 汉堡王
-- 比格披萨自助
-- 萨莉亚意式餐厅
-- 小菜园新徽菜
-- 芳竹园火锅
-- DQ
-- 好利来
-- 海底捞
-- 原麦山丘
-- 库迪咖啡
-- 鱼翻天
-- 西村叔叔的店
-- 熊喵来了火锅
-- 沏佰杯
-- 沪上阿姨
-- 尚渔味双拼烤鱼
-- 食其家·牛丼咖喱
-- 茉酸奶
-- 亚惠美食
-- 呷哺呷哺
-- 牛半斤鲜切牛肉自助火锅
-- 禾之鲜回转寿司
-- 三川日料
-- 唐府妈妈菜
-- 满圆薄春饼
-- 董顺桃老长沙臭豆腐
-- 四季小馆
-- 夸父炸串
-- 池田寿司
-- 1点点
-- 鲜芋仙
-- 佟源记炸肉
-- 冰岛
-- 啫滋滋啫啫煲
-- 阿甘锅盔
-- 馍界传奇·肉夹馍·手工面
-- CoCo都可
-- 上官家西北菜
-- 见味花甲
-- 好客屯·东北铁锅炖
 
-## 新华城市广场
-- 芳竹园火锅
-- 吉野家
-- 汉堡王
-- 达美乐披萨
-- 尚鱼味
-- 沪上阿姨
-- 肯德基KFC
-- DQ
-- 越鮨道顿堀
-- 马路边边
-- 九尚鼎自助料理·烤肉·火锅
-- 库迪咖啡
-- 麦卡珑比萨
-- 奈雪的茶
-- 麦乐多烘培
-- 肚魁川渝冒肚
-- 一锅到底三汁焖锅
-- Pan小姐芝士年糕火锅·炸鸡
-- 满米酸奶
-- luckin coffee 瑞幸咖啡
-- COSTA COFFEE
-- 华莱士·全鸡汉堡
-- 夸父炸串
-- ONE.奈斯西餐厅
-- 老城街小面
-- 巴蜀后街自助串串火锅
-- 弄堂小笼包
-- 五谷渔粉
-- 安妮的意大利餐厅
-- 谷喜道·朝鲜拌饭
+## Wuyue Plaza  
+- Haidilao Hot Pot  
+- Xiabu Xiabu Hot Pot  
+- CoCo Fresh Tea & Juice  
+- Sally's Italian Restaurant  
+- Helens (Helen's Bistro)  
+- Jinchuang Jiucun Ding · Premium Self-Service Charcoal BBQ  
+- Micun Bibimbap  
+- Hefu Noodle Soup (Hexian Noodle)  
+- Big Pizza (Bige Pizza)  
+- Sichuan Baiwei (Sichuan-style Cuisine)  
+- Zhaoxianji Treasure Fresh Beef Hot Pot Buffet  
+- Zhuogang · King Crayfish Pot  
+- 小七的魔法厨房 (Xiaoqi's Magic Kitchen)  
+- Xiao Zhu Charlie Sichuan-style BBQ Buffet  
+- That Korean Restaurant (Na Jia Chaoxianzu Restaurant)  
+- Jiutianjia Black Beef BBQ Cuisine  
+- Qiqiha'er Family-style BBQ  
+- Luckin Coffee  
+- Xiong Miao Lai Le (Bear & Cat Hot Pot)  
+- DQ (Dairy Queen)  
+- Suhou Pastries  
+- Tanyu · Fresh Green Pepper Spicy Grilled Fish  
+- Kim’s Kitchen (Korean Hot Pot, Fried Chicken & Beer)  
+- Wangxiaoxiang (Wang's Alley Cuisine)  
+- Ganfan Xiang (Hunan-style Rice Dishes)  
+- Yidiandian (Fresh Tea)  
+- Sanchuan Japanese Cuisine  
+- Mo Yogurt (Moyogurt)  
+- Yuku Vitality Grilled Fish  
+- Guoyou Hot Pot (Chicken & Bullfrog Tower)  
+- Weilu Guokui (Encircled Stove Savory Pancake)  
+- Tongyuanji Fried Meat  
+- Shuangmendong Gogijip (Shuangmendong BBQ House)  
+- Tianlala Fresh Fruit Tea  
+- Auntie Shanghaiese (Fresh Fruit Tea)  
+- Bantianyao Grilled Fish  
+- COTTI Coffee  
+- Wallace (Fried Chicken & Burgers)  
+- Lucky Coffee  
+- Holiland (Pastry Shop)  
+- Chabaidao (Fresh Tea)  
+- Pizza Hut  
+- Bawang Chaoji (Princess Tea)  
+- T斯汀 Chinese Burger (Tasiting Chinese Burger)  
+- Starbucks  
 
-## 零散优质餐厅推荐
-- 津沽大院
+
+## Jinnan Aeon Mall  
+- Micun Bibimbap  
+- Jinxina Korean Buffet & BBQ  
+- McDonald's  
+- KFC  
+- Jinleyuan Pastry Shop  
+- Heytea  
+- Bayi Laoye Xinjiang Cuisine  
+- Luxihe Peach Cakes  
+- Pizza Hut  
+- Bawang Chaoji (Princess Tea)  
+- Jiutianjia Black Beef BBQ Cuisine  
+- Burger King  
+- Big Pizza Buffet (Bige Pizza Buffet)  
+- Sally's Italian Restaurant  
+- Xiaocaiyuan New Huizhou Cuisine  
+- Fangzhuyuan Hot Pot  
+- DQ (Dairy Queen)  
+- Holiland (Pastry Shop)  
+- Haidilao Hot Pot  
+- Original Wheat Hill (Bakery)  
+- COTTI Coffee  
+- Yufantian (Seafood Cuisine)  
+- Uncle Nishimura's Shop (Pastry & Desserts)  
+- Xiong Miao Lai Le Hot Pot (Bear & Cat Hot Pot)  
+- Qiebabei (Fresh Tea)  
+- Auntie Shanghaiese (Fresh Fruit Tea)  
+- Shangyuwei Dual-Flavor Grilled Fish  
+- Sukiya (Beef Donburi & Curry)  
+- Mo Yogurt (Moyogurt)  
+- Yahui Food Court  
+- Xiabu Xiabu Hot Pot  
+- Niubanjin Fresh Sliced Beef Hot Pot Buffet  
+- Hezhixian Conveyor Belt Sushi  
+- Sanchuan Japanese Cuisine  
+- Tangfu Mama's Home-style Dishes  
+- Manyuan Thin Spring Pancakes  
+- Dongshuntao Lao Changsha Stinky Tofu  
+- Siji Xiaoguan (Four Seasons Bistro)  
+- Kuafu Fried Skewers  
+- Ikeda Sushi  
+- Yidiandian (Fresh Tea)  
+- Xianyuxian (Taro & Yam Desserts)  
+- Tongyuanji Fried Meat  
+- Bingdao (Iceland Desserts)  
+- Zizizi Clay Pot Dishes  
+- Agan Guokui (Agan's Savory Pancake)  
+- Mojie Chuanqi · Roujiamo & Handmade Noodles  
+- CoCo Fresh Tea & Juice  
+- Shangguanjia Northwest Cuisine  
+- Jianwei Flower Clams (Clam Dishes)  
+- Haoketun · Northeast Iron Pot Stew  
+- Yideshun Halal Cuisine (Affordable and good value)  
+
+
+## Xinhua City Plaza  
+- Fangzhuyuan Hot Pot  
+- Yoshinoya (Beef Donburi & Curry)  
+- Burger King  
+- Domino's Pizza  
+- Shangyuwei Grilled Fish  
+- Auntie Shanghaiese (Fresh Fruit Tea)  
+- KFC  
+- DQ (Dairy Queen)  
+- Yueyi Daodunku (Japanese Cuisine)  
+- Malubianbian (Sichuan-style Hot Pot & Skewers)  
+- Jiushangding Buffet · BBQ & Hot Pot  
+- COTTI Coffee  
+- Maka Long Pizza (Macaron Pizza)  
+- Nayuki's Tea  
+- Maileduo Bakery  
+- Dukuichuan Yu Spicy Tripe (Dukuichuan-style Spicy Tripe)  
+- Yiguodaodi Sanzhi Braised Pot (All-in-One Braised Pot)  
+- Ms. Pan's Cheese Rice Cake Hot Pot & Fried Chicken  
+- Manmi Yogurt  
+- Luckin Coffee  
+- COSTA COFFEE  
+- Wallace · Whole Chicken & Burgers  
+- Kuafu Fried Skewers  
+- ONE. Nice Western Restaurant  
+- Laochengjie Noodles (Old Town Street Noodles)  
+- Bashu Houjie Self-Service Skewers Hot Pot  
+- Longtang Xiaolongbao (Alley Xiaolongbao)  
+- Wugu Yu Noodle Soup (Five-Grain Fish Noodle Soup)  
+- Annie's Italian Restaurant  
+- Guxi Dao · Korean Bibimbap  
+
+
+## Scattered Recommended Quality Restaurants  
+- Jingu Compound Restaurant  
+- Muxiangyuan Hot Pot & BBQ ⚫️ Halal (Good meat quality)

@@ -1,17 +1,29 @@
-## AI
+# AI SIG
 
-As Huawei Ascend and our college are cooperative units, we enjoy a lot of Huawei's computing resources.
+AI SIG (Special Interest Group) is the core team of our club dedicated to exploring cutting-edge artificial intelligence technologies and conducting project practices. Relying on the in-depth cooperation between our college and Huawei Ascend, we have abundant computing resources and technical support, providing members with a comprehensive growth environment that covers everything from theory to practical application.
 
-By joining our club, you can learn:
+Currently, AI SIG has two project-focused sub-teams:
 
-- Understand the basic concepts of artificial intelligence
-- 
-- Understand concepts such as neural networks, convolution, pooling, deep learning, attention mechanisms, etc
-- 
-- Implementation of handwriting recognition
-- 
-- Learn Docker and Linux related commands to understand the workflow of visual object detection, sample annotation, and model training
-- 
-- Using GPU servers to complete model training and inference
-- 
-- Those interested can learn about Huawei Mindpore framework, CANN, and Ascend C operator development
+## 1. Qingwei Intelligent Embedded Software Development Team
+Utilize development boards provided by Qingwei Intelligent to port and deploy various AI models.
+Focus on edge computing and embedded AI, gaining in-depth understanding of model optimization, inference acceleration, and hardware collaboration.
+Practice in real-world application scenarios to enhance the ability to implement AI in resource-constrained environments.
+
+## 2. Huawei Ascend AI Team
+Conduct development for Huawei-related AI competitions and projects based on Huawei Ascend hardware and the MindSpore framework.
+Learn and practice CANN architecture and Ascend C operator development, delving into underlying AI acceleration technologies.
+Explore the full-stack AI workflow from model training to end-side deployment.
+
+## Technical Exploration Directions
+In addition to the aforementioned project practices, the team also conducts in-depth exploration in fields such as AI compilers. Currently, the leader of AI SIG is interning at the Buddy Compiler community, focusing on the innovation and application of AI compilation technologies.
+
+## What You Will Have the Opportunity to Learn and Participate In:
+Fundamentals of artificial intelligence and core concepts of deep learning (neural networks, convolution, attention mechanisms, etc.).
+Implementation of typical AI tasks such as handwritten character recognition and object detection.
+Usage of Docker, Linux, and GPU servers, and mastery of the complete AI development workflow.
+Model training, inference, and optimization technologies.
+Practical experience with the Huawei MindSpore framework and the Ascend ecosystem.
+Participation in the research and practice of cutting-edge AI compiler technologies.
+
+🌹 We welcome all students interested in artificial intelligence to join us. Let’s explore the systematic knowledge and engineering practices of AI together and grow as a team!
+

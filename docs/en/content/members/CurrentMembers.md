@@ -18,7 +18,7 @@
   Vice President of OpenHarmony Club
   
 * Research orientation:
-  Computer vision
+  Embedded development
 
 
 #### Qin Haoyang
@@ -44,7 +44,7 @@
   Vice President of OpenHarmony, Al team leader of OpenHarmony Club
 
 * Research orientation:
-  AI models migrate embedded devices, operator development, and underlying orientation
+  AI compiler
 
 
 #### Zou Zuhao
