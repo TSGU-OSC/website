@@ -3,7 +3,7 @@
 ## Ubuntu的安装
 
 - 搜索下载Ubuntu桌面版
-  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu1.png)
+  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu1-oc-output.jpg)
   打开VMware--创建新的虚拟机名称--选择下载好的Ubuntu文件--创建虚拟机名称--按需选择最大磁盘大小
   以下为上面步骤完成后的操作流程
   <https://ubuntu.com/download/desktop/install-ubuntu-desktop>
@@ -14,10 +14,10 @@
 ## 以下是用VScode连接ubuntu
 
 - 第一步：下载ssh
-  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu4.jpg)
+  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu4-oc-output.jpg)
 
 - 第二步：新建--输入电脑IP--选择Linux
-  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu5.jpg)
+  ![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu5-oc-output.jpg)
 
 ## 若出现无法连接的情况
 
@@ -32,9 +32,9 @@ sudo apt install openssh-server
 
 若出现以下情况，则需要进行换源
 
-![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu6.jpg)
+![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu6-oc-output.jpg)
 
-![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu3.JPEG)
+![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu3-oc-output.jpg)
 
 
 
@@ -80,7 +80,7 @@ sudo apt install openssh-server
 sudo systemctl status ssh
 ```
 
-![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu2.png)
+![alt text](../../../public/technical/Basic-knowledge/markdown/Ubuntu2-oc-output.jpg)
 
 此为连接成功
 
