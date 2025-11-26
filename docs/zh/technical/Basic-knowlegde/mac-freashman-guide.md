@@ -122,3 +122,12 @@ chmod +x 你的文件名
 - **Option 键**：常用于调出隐藏功能（如调整音量 / 亮度的精细调节）。
 
 - **Control 键**：多与方向键配合（如 ⌃ + 方向键 切换桌面空间）。
+
+## 使用VScode的Debug遇到的问题
+
+- 报错内容：`process exited with status -1 (this is a non-interactive debug session, cannot get permission to debug processes.)`
+- 解决方案：
+
+    1. 在隐私与安全性中的完全磁盘访问权限中打开VScode
+    2. 开发者工具中添加VScode
+    3. `sudo /usr/sbin/DevToolsSecurity -enable`
