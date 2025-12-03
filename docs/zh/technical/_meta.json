@@ -1,0 +1,58 @@
+[
+  {
+    "type": "file",
+    "name": "1-Overview",
+    "label": "总览",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "2-Contributing",
+    "label": "贡献指南",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type":"dir",
+    "name":"Basic-knowlegde",
+    "label":"基础知识",
+    "collapsible":"true",
+    "collapsed":"false"
+  },
+  {
+    "type": "dir",
+    "name": "Front-end",
+    "label": "前端",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "dir",
+    "name": "Back-end",
+    "label": "后端",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "dir",
+    "name": "Operation-and-Maintenance",
+    "label": "运维",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "dir",
+    "name": "AI",
+    "label": "AI",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "dir",
+    "name": "Other",
+    "label": "其他",
+    "collapsible": "true",
+    "collapsed": "false"
+  }
+]
