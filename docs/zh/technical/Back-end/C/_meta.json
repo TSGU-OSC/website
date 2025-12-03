@@ -1,0 +1,51 @@
+[
+  {
+    "type": "dir",
+    "name": "C_Environment_Configuration",
+    "label": "配置VSCode的C/C++环境",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "C",
+    "label": "简单的C#与C++对比",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "Conda_Environment",
+    "label": "python指定版本安装及Conda环境配置（Ubuntu、MacOS）",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "Conda",
+    "label": "关于conda虚拟环境无法显示名称的解决方案",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "ffmeg_develop",
+    "label": "Linux和Macos ffmpeg开发环境配置",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "ffmpeg_code_learn",
+    "label": "ffmpeg开发 入门教程",
+    "collapsible": "true",
+    "collapsed": "false"
+  },
+  {
+    "type": "file",
+    "name": "gdb_lldb",
+    "label": "C/C++程序调试工具使用文档（gdb/lldb）",
+    "collapsible": "true",
+    "collapsed": "false"
+  }
+]
