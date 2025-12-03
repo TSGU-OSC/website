@@ -77,6 +77,20 @@ lldb -- a.out 1 2 3
 (gdb) break /root/workspace/bmf_OSPP/bmf/sdk/cpp_sdk/src/task.cpp:99 if stream_id == 0
 ```
 
+```
+(lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
+(lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
+```
+
+修改断点条件
+```
+(gdb) condition 1 stream_id == 0
+```
+```
+(lldb) breakpoint modify 1 -c 'stream_id == 0'
+(lldb) br mod 1 -c 'stream_id == 0'
+```
+
 打印断点信息
 ```
 (gdb) info break
@@ -155,13 +169,23 @@ lldb -- a.out 1 2 3
 ```
 (gdb) list
 ```
+```
+(lldb) list
+```
 ### 动态库
 ```
 (gdb) info sharedlibrary 
 ```
+```
+(lldb) image list
+```
 ### 临时变量
 ```
 (gdb) info locals
+```
+```
+(lldb) frame variable --no-args
+(lldb) fr v -a
 ```
 ### 线程
 ```
@@ -174,6 +198,10 @@ lldb -- a.out 1 2 3
 ```
 (gdb) backtrace
 ```
+```
+(lldb) thread backtrace
+(lldb) bt
+```
 ### 内存映射表
 ```
 info proc mappings
@@ -183,16 +211,54 @@ info proc mappings
 (gdb) p &((bmf_sdk::Task *)0)->inputs_queue_
 ```
 ### 观察点设置
+#### 变量观察点
 ```
-(gdb) watch *(bmf_sdk::PacketQueueMap*)0x7fffbcc51b70
+(gdb) watch global_var
+```
+```
+(lldb) watchpoint set variable global_var
+(lldb) wa s v global_var
+```
+#### 内存观察点
+```
+(gdb) watch -location g_char_ptr
+```
+```
+(lldb) watchpoint set expression -- my_ptr
+(lldb) wa s e -- my_ptr
+```
+
+#### 条件观察点
+```
+(lldb) watch set var global
+(lldb) watchpoint modify -c '(global==5)'
 ```
 ### 观察点查看
 ```
 (gdb) info watchpoints
 ```
+```
+(lldb) watchpoint list
+(lldb) watch l
+```
 ### 查看周围内存
+#### 查看十六进制
 ```
 (gdb) x/20x 0x7fffbcc51b70
+```
+```
+(lldb) memory read --size 4 --format x --count 4 0xbffff3c0
+(lldb) me r -s4 -fx -c4 0xbffff3c0
+(lldb) x -s4 -fx -c4 0xbffff3c0
+```
+#### 查看二进制
+```
+(gdb) x/20b 0x7fffbcc51b70
+```
+```
+(lldb) memory read --size 1 --format b --count 20 0xbffff3c0
+(lldb) me r -s1 -fb -c20 0xbffff3c0
+(lldb) x -s1 -fb -c20 0xbffff3c0
 ```
 ### 查看当前指令
 ```
