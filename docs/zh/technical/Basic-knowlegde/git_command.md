@@ -221,6 +221,100 @@ git log
 
 ---
 
+### 查看提交摘要（按作者分组）
+
+#### 主要操作
+
+```
+git shortlog
+```
+
+- 用于按作者分组显示提交摘要，默认按作者名字母顺序排列。
+
+---
+
+#### 常用参数
+
+**1. 统计提交数量**
+
+- `-s` 或 `--summary`：仅显示每个作者的提交数量。
+
+  ```
+  git shortlog -s
+  ```
+
+- `-n` 或 `--numbered`：按提交数量排序（从多到少）。
+
+  ```
+  git shortlog -sn
+  ```
+
+**2. 显示邮箱**
+
+- `-e` 或 `--email`：显示作者的邮箱地址。
+
+  ```
+  git shortlog -se
+  ```
+
+**3. 过滤提交**
+
+- `--author=<pattern>`：按作者过滤。
+
+  ```
+  git shortlog --author="John"
+  ```
+
+- `--since=<date>` 和 `--until=<date>`：按时间范围过滤。
+
+  ```
+  git shortlog --since="2023-01-01" --until="2023-12-31"
+  ```
+
+- `-- <path>`：查看特定文件或目录的提交摘要。
+
+  ```
+  git shortlog -- README.md
+  ```
+
+**4. 其他常用参数**
+
+- `--all`：显示所有分支的提交摘要。
+
+  ```
+  git shortlog --all
+  ```
+
+- `--no-merges`：排除合并提交。
+
+  ```
+  git shortlog --no-merges
+  ```
+
+---
+
+#### 组合使用示例
+
+- 显示所有作者的提交数量，按数量排序：
+
+  ```
+  git shortlog -sn
+  ```
+
+- 显示某个时间范围内的提交摘要：
+
+  ```
+  git shortlog --since="2023-01-01" --until="2023-12-31"
+  ```
+
+- 显示某个作者的提交摘要，包含邮箱：
+
+  ```
+  git shortlog -e --author="John"
+  ```
+
+---
+
 #### 常用参数
 
 **1. 格式化输出**
@@ -409,11 +503,209 @@ git reset --hard <commit_id>
 ```
 
 
+### 撤销提交（创建反向提交）
+
+#### 作用
+
+`git revert` 用于撤销一个或多个提交，通过创建一个新的提交来反向应用之前的更改。与 `git reset` 不同，`git revert` 不会修改提交历史，因此更适合在已推送的提交上使用。
+
+#### 主要操作
+
+##### 1. 撤销单个提交
+
+- 撤销指定的提交：
+
+  ```
+  git revert <commit-hash>
+  ```
+
+  例如：
+
+  ```
+  git revert a1b2c3d
+  ```
+
+##### 2. 撤销多个提交
+
+- 撤销一个范围内的提交：
+
+  ```
+  git revert <oldest-commit>..<newest-commit>
+  ```
+
+  例如：
+
+  ```
+  git revert a1b2c3d..e4f5g6h
+  ```
+
+##### 3. 撤销合并提交
+
+- 撤销合并提交需要指定主线（mainline）：
+
+  ```
+  git revert -m 1 <merge-commit-hash>
+  ```
+
+  `-m 1` 表示保留第一个父提交的更改。
+
+#### 常用参数
+
+- `-n` 或 `--no-commit`：撤销更改但不自动创建提交，允许你手动修改后再提交。
+
+  ```
+  git revert -n <commit-hash>
+  ```
+
+- `-e` 或 `--edit`：在创建撤销提交前编辑提交信息（默认行为）。
+
+  ```
+  git revert -e <commit-hash>
+  ```
+
+- `--no-edit`：使用默认的提交信息，不进入编辑器。
+
+  ```
+  git revert --no-edit <commit-hash>
+  ```
+
+- `--continue`：在解决冲突后继续撤销操作。
+
+  ```
+  git revert --continue
+  ```
+
+- `--abort`：取消撤销操作，恢复到撤销前的状态。
+
+  ```
+  git revert --abort
+  ```
+
+#### 注意事项
+
+- **不修改历史**：`git revert` 会创建新的提交，不会修改现有的提交历史，因此适合在团队协作中使用。
+- **解决冲突**：如果撤销过程中发生冲突，需要手动解决冲突后使用 `git revert --continue` 继续。
+- **revert vs reset**：
+  - `git revert`：创建新提交来撤销更改，保留历史记录。
+  - `git reset`：直接修改提交历史，适合本地未推送的提交。
+
+
 ### 使远程仓库回滚生效
 
 ```
 git push orgin main --force
 ```
+
+
+### 选择性应用提交（拣选提交）
+
+#### 作用
+
+`git cherry-pick` 用于将一个或多个提交从一个分支应用到当前分支。这在需要将特定的更改从一个分支移植到另一个分支时非常有用。
+
+#### 主要操作
+
+##### 1. 拣选单个提交
+
+- 将指定的提交应用到当前分支：
+
+  ```
+  git cherry-pick <commit-hash>
+  ```
+
+  例如：
+
+  ```
+  git cherry-pick a1b2c3d
+  ```
+
+##### 2. 拣选多个提交
+
+- 拣选多个连续的提交：
+
+  ```
+  git cherry-pick <commit1>..<commit2>
+  ```
+
+  例如：
+
+  ```
+  git cherry-pick a1b2c3d..e4f5g6h
+  ```
+
+- 拣选多个不连续的提交：
+
+  ```
+  git cherry-pick <commit1> <commit2> <commit3>
+  ```
+
+  例如：
+
+  ```
+  git cherry-pick a1b2c3d e4f5g6h i7j8k9l
+  ```
+
+##### 3. 拣选并记录来源
+
+- 使用 `-x` 参数在提交信息中记录原始提交的哈希值：
+
+  ```
+  git cherry-pick -x <commit-hash>
+  ```
+
+  这会在提交信息末尾添加类似 `(cherry picked from commit a1b2c3d)` 的信息，便于追踪提交来源。
+
+  **注意**：`-x` 参数通常用于在公共分支之间拣选提交，不建议在本地分支使用。
+
+#### 常用参数
+
+- `-x`：在提交信息中添加原始提交的哈希值，用于追踪来源。
+
+  ```
+  git cherry-pick -x <commit-hash>
+  ```
+
+- `-n` 或 `--no-commit`：应用更改但不自动创建提交，允许你手动修改后再提交。
+
+  ```
+  git cherry-pick -n <commit-hash>
+  ```
+
+- `-e` 或 `--edit`：在创建提交前编辑提交信息。
+
+  ```
+  git cherry-pick -e <commit-hash>
+  ```
+
+- `--continue`：在解决冲突后继续拣选操作。
+
+  ```
+  git cherry-pick --continue
+  ```
+
+- `--abort`：取消拣选操作，恢复到拣选前的状态。
+
+  ```
+  git cherry-pick --abort
+  ```
+
+- `--skip`：跳过当前提交，继续拣选下一个提交。
+
+  ```
+  git cherry-pick --skip
+  ```
+
+#### 使用场景
+
+- **修复 bug**：将 bug 修复提交从开发分支拣选到生产分支。
+- **功能移植**：将特定功能的提交从一个分支移植到另一个分支。
+- **提交整理**：将分散在不同分支的相关提交整合到一个分支。
+
+#### 注意事项
+
+- **解决冲突**：如果拣选过程中发生冲突，需要手动解决冲突后使用 `git cherry-pick --continue` 继续。
+- **避免重复提交**：拣选提交会创建新的提交哈希，因此要注意避免在同一分支上重复拣选相同的提交。
+- **使用 -x 参数**：在公共分支之间拣选提交时，建议使用 `-x` 参数记录来源，便于后续追踪和维护。
 
 
 ### 查看可用分支
@@ -610,6 +902,170 @@ bfg --delete-folders ".vs"
 git reflog expire --expire=now --all && git gc --prune=now --aggressive 
 ```
 
+## git format-patch
+
+### 作用
+
+`git format-patch` 用于将提交转换为补丁文件（patch files），这些文件可以通过邮件发送或在不同的仓库之间共享。补丁文件包含了提交的所有信息，包括作者、日期、提交信息和代码更改。
+
+### 主要操作
+
+#### 1. 生成单个提交的补丁
+
+- 为最近的一个提交生成补丁：
+
+  ```
+  git format-patch -1
+  ```
+
+- 为指定的提交生成补丁：
+
+  ```
+  git format-patch -1 <commit-hash>
+  ```
+
+  例如：
+
+  ```
+  git format-patch -1 a1b2c3d
+  ```
+
+#### 2. 生成多个提交的补丁
+
+- 为最近的 N 个提交生成补丁：
+
+  ```
+  git format-patch -<N>
+  ```
+
+  例如，生成最近 3 个提交的补丁：
+
+  ```
+  git format-patch -3
+  ```
+
+- 为指定范围的提交生成补丁：
+
+  ```
+  git format-patch <commit1>..<commit2>
+  ```
+
+  例如：
+
+  ```
+  git format-patch a1b2c3d..e4f5g6h
+  ```
+
+#### 3. 生成从某个提交到当前的所有补丁
+
+- 生成从指定提交到 HEAD 的所有补丁：
+
+  ```
+  git format-patch <commit-hash>
+  ```
+
+  例如：
+
+  ```
+  git format-patch a1b2c3d
+  ```
+
+#### 4. 指定输出目录
+
+- 将补丁文件保存到指定目录：
+
+  ```
+  git format-patch -1 -o <output-directory>
+  ```
+
+  例如：
+
+  ```
+  git format-patch -3 -o patches/
+  ```
+
+### 常用参数
+
+- `-1`, `-2`, `-N`：生成最近 N 个提交的补丁。
+
+- `-o <dir>` 或 `--output-directory <dir>`：指定补丁文件的输出目录。
+
+  ```
+  git format-patch -1 -o patches/
+  ```
+
+- `--stdout`：将补丁输出到标准输出而不是文件。
+
+  ```
+  git format-patch -1 --stdout > my-patch.patch
+  ```
+
+- `--subject-prefix=<prefix>`：自定义补丁邮件的主题前缀（默认为 `[PATCH]`）。
+
+  ```
+  git format-patch -1 --subject-prefix="RFC PATCH"
+  ```
+
+- `--numbered`：为补丁文件添加序号（如 `[PATCH 1/3]`）。
+
+  ```
+  git format-patch -3 --numbered
+  ```
+
+- `--cover-letter`：生成一个封面信件（cover letter），用于描述整个补丁系列。
+
+  ```
+  git format-patch -3 --cover-letter
+  ```
+
+- `--signoff`：在补丁中添加 `Signed-off-by` 行。
+
+  ```
+  git format-patch -1 --signoff
+  ```
+
+### 应用补丁
+
+生成的补丁文件可以使用 `git am` 命令应用到其他仓库：
+
+```
+git am <patch-file>
+```
+
+例如：
+
+```
+git am 0001-Fix-bug.patch
+```
+
+### 使用场景
+
+- **邮件列表开发**：在使用邮件列表进行代码审查的项目（如 Linux 内核、FFmpeg）中，开发者使用 `git format-patch` 生成补丁并通过邮件发送。
+- **跨仓库共享**：在不同的 Git 仓库之间共享提交。
+- **备份提交**：将重要的提交导出为补丁文件进行备份。
+
+### 示例
+
+- 生成最近 3 个提交的补丁并保存到 `patches/` 目录：
+
+  ```
+  git format-patch -3 -o patches/
+  ```
+
+- 生成从 `a1b2c3d` 到 `HEAD` 的所有补丁，并添加封面信件：
+
+  ```
+  git format-patch a1b2c3d --cover-letter
+  ```
+
+- 生成单个提交的补丁并输出到标准输出：
+
+  ```
+  git format-patch -1 --stdout > my-fix.patch
+  ```
+
+---
+
 ## git send-email
 配置SMTP基本信息（以qq为例）
 ```Shell
@@ -622,7 +1078,7 @@ git config --global sendemail.smtpAuth LOGIN  # Use LOGIN method
 ```
 发送邮件（以ffmpeg为例）
 ```
-git send-email --smtp-ssl --to ffmpeg-devel@ffmpeg.org --subject "[PATCH] Fix time_base handling" -1 b438672b11645e1152375beba759a0d2c704e3b1  
+git send-email --smtp-ssl --to ffmpeg-devel@ffmpeg.org --subject "[PATCH] Fix time_base handling" -1 b438672b11645e1152375beba759a0d2c704e3b1
 ```
 
 ## git官网
