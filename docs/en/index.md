@@ -21,7 +21,7 @@ hero:
 features:
   - title: Technical Docs
     details: The technical documentation of the community is the centralized knowledge base of the community, providing members with a complete technical guide from development basics to project practice. Accumulate technical assets through systematic documentation to enhance team collaboration and project research and development efficiency.
-    link: https://tech-docusaurus.pages.dev
+    link: https://docs.tsguas.cn/
     icon: 📦️
   
   - title: WeChat official account
