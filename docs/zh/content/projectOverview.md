@@ -4,7 +4,7 @@
 
 🌟 “开源鸿蒙社”致力于推动开源技术发展，通过开源技术的学习、实践和推广，为同学们提供更多的专业学习机会和职业发展支持，力争未来为社会和行业带来更多的创新和进步。
 
-📢 本开源社团一共有14个仓库，以下是各个仓库的介绍及导航
+📢 本开源社团一共有20个仓库，以下是各个仓库的介绍及导航
 
 - [`Gobang`](https://gitee.com/TSGU-OSC/gobang) 这是一个用C++和EasyX图形库写的五子棋游戏。
 
@@ -33,5 +33,17 @@
 - [`OpenConverter`](https://gitee.com/TSGU-OSC/OpenConverter) 是一个基于 FFmpeg源代码、Qt开源框架构建的软件，它提供了一些简单易用的工具，可以方便地转换、编辑和处理音视频文件。
 
 - [`知识导航`](https://github.com/TSGU-OSC/OSC_main/blob/master/command/README.md) 😁 知识导航仓库中的技术文档和基础知识部分主要涵盖了计算机领域的各个方面。
+
+- [`TechDoc`](https://github.com/TSGU-OSC/TechDoc) 技术文档库，覆盖多领域技术教程与实践指南。
+
+- [`在线学习移动应用开发作业`](https://github.com/TSGU-OSC/Online_Learning_Mobile_Application_Development_Assignments) 
+
+- [`算法培训仓库`](https://github.com/TSGU-OSC/Algorithm-training) 用于存放社团开设的算法课程相关文件。
+
+- [`BUDDY MLIR`](https://github.com/TSGU-OSC/buddy-mlir_study) 一个基于MLIR的编译器框架，将领域特定语言(DSLs)桥接到领域特定架构（DSAs）。
+
+- [`openssl`](https://github.com/TSGU-OSC/openssl) TLS/SSL和加密库。OpenSSL是一个强大的商业级、功能齐全的开源工具包，适用于TLS（前称SSL）、DTLS和QUIC协议。
+
+- [`ffmpeg-webrtc`](https://github.com/TSGU-OSC/ffmpeg-webrtc) 支持FFmpeg的WebRTC（WHIP）。FFmpeg 是一个用于处理多媒体内容的库和工具集合,比如音频、视频、字幕及相关元数据。
 
 > 诚邀各位同学加入！
