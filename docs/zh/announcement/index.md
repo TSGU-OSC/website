@@ -66,3 +66,15 @@
 ### [艺术节-开源鸿蒙游园圆满落幕：2025.5.25](https://mp.weixin.qq.com/s/FXx7AlPE7ZtFK9qOr9neXA)
 
 ### [智创未来展锋芒，慧通世界启新程—软件通信学院携数智渤海人工智能产学协同论坛圆满落幕：2025.6.20](https://mp.weixin.qq.com/s/zonI_So9IHQo9GGgpw3tZQ)
+
+### [注入新活力，共码新篇章|开源鸿蒙社纳新圆满落幕：2025.10.8](https://mp.weixin.qq.com/s/GM03aRxXesQjBaIDcjpNtw)
+
+### [鸿蒙新视野，中文代码共话未来——我校软通学院携手政企高层共访中文代码智慧工坊：2025.10.30](https://mp.weixin.qq.com/s/kz49P5srlHA8tAczIUzbCA)
+
+### [赴约京城——共赴鸿蒙技术之约：2025.11.13](https://mp.weixin.qq.com/s/za3RjPYW7-fFUtnDJM1ZIQ)
+
+### [开源鸿蒙社：2025.12.21](https://mp.weixin.qq.com/s/-hXizFPHLnVHKgunq002Yg)
+
+### [COSCon'25 第十届中国开源年会：2025.12.31](https://mp.weixin.qq.com/s/A3LOU-Fuee5SzHlo5-SmdA)
+
+### [开源鸿蒙社2025年度总结：2026.2.16](https://mp.weixin.qq.com/s/P129Q8HNEw4sA6T_uY95yQ)
