@@ -27,13 +27,13 @@ features:
 
   - title: 社团微信公众号
     details: 社团微信公众号是为社团宣传和推广的重要平台。社团已经通过公众号发布了社团资讯、活动信息、作品展示等诸多内容。
-    link: https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkxODY5NjQyNw==&scene=124#wechat_redirect
+    link: https://mp.weixin.qq.com/s/-hXizFPHLnVHKgunq002Yg
     icon: ✏️
 
-  - title: 社团资产管理系统统计&视图
-    details: 社团资产管理系统统计 & 视图基于数据可视化技术搭建，为社团提供资产数据的统计分析与直观视图展示，涵盖资产分类、使用状态、流转记录等核心信息，助力高效掌握资产动态，提升资产管理的便捷性与准确性。
-    link: 
-    icon: 📕
+  # - title: 社团资产管理系统统计&视图
+  #   details: 社团资产管理系统统计 & 视图基于数据可视化技术搭建，为社团提供资产数据的统计分析与直观视图展示，涵盖资产分类、使用状态、流转记录等核心信息，助力高效掌握资产动态，提升资产管理的便捷性与准确性。
+  #   link: 
+  #   icon: 📕
 
   # - title: Open WebUI
   #   details: Open WebUI是社团私有的大语言模型使用平台，提供了一个安全可靠、智能高效的推理模型工具，能够充分满足文本生成、问答分析等日常需求。
