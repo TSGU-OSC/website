@@ -3,62 +3,62 @@
 
 ### 2026级执行委员会
 
-####  [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#曹艳阳)黄德瑞
+####  黄德瑞
 
 - 个人简介： 开源鸿蒙社社长，负责人
 - 研究方向：音视频开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#邹祖豪)邹祖豪
+#### 邹祖豪
 
 - 个人简介： 开源鸿蒙社副社长 分管技术部
 - 研究方向：嵌入式开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#曹艳阳)曹艳阳
+#### 曹艳阳
 
 - 个人简介： 开源鸿蒙社副社长 分管运营部
 - 研究方向：后端开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#林考欣)林考欣
+#### 林考欣
 
 - 个人简介： 开源鸿蒙社副社长 分管宣传部
 - 研究方向：嵌入式
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#毛鑫磊)毛鑫磊
+#### 毛鑫磊
 
 - 个人简介: 开源鸿蒙技术部部长
 - 研究方向：嵌入式，硬件原理，算法
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#胡靖虞)胡靖虞
+#### 胡靖虞
 
 - 个人简介： 开源鸿蒙技术部副部长
 - 研究方向：嵌入式
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#张炜奇)张炜奇
+#### 张炜奇
 
 - 个人简介: 开源鸿蒙技术部副部长
 - 研究方向：软件开发，运行，维护
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#赵浩梁)赵浩梁
+#### 赵浩梁
 
 - 个人简介： 开源鸿蒙社运营部部长
 - 研究方向：机器人嵌入式开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#付宜芳)付宜芳
+#### 付宜芳
 
 - 个人简介： 开源鸿蒙社运营部副部长
 - 研究方向：嵌入式
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#黄榆茵)黄榆茵
+#### 黄榆茵
 
 - 个人简介： 开源鸿蒙社运营部副部长
 - 研究方向：智能软件工程
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#麻依苹)麻依苹
+#### 麻依苹
 
 - 个人简介： 开源鸿蒙社宣传部部长
 - 研究方向：嵌入式开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#刘哲嘉)刘哲嘉
+#### 刘哲嘉
 
 - 个人简介： 开源鸿蒙社宣传部副部长
 - 研究方向：学习开源技术
@@ -66,12 +66,12 @@
 
 ### 2026级项目委员会
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#赵逢华)赵逢华
+#### 赵逢华
 
 - 个人简介： APP项目组组长，Java项目组组长
 - 研究方向： 全栈开发、运维
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#郭恩东)郭恩东
+#### 郭恩东
 
 - 个人简介： OpenConverter组组长
 - 研究方向： 音视频处理
@@ -81,17 +81,17 @@
 - 个人简介： 算法组组长
 - 研究方向：后端开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#张圣哲)张圣哲
+#### 张圣哲
 
 - 个人简介： 硬件组组长
 - 研究方向： 嵌入式，计算机视觉方向
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#门熙桐)门熙桐
+#### 门熙桐
 
 - 个人简介： AI SIG组组长
 - 研究方向： 嵌入式软件开发
 
-#### [#](https://osc.tsguas.cn/content/members/CurrentMembers.html#林考欣)林考欣
+#### 林考欣
 
 - 个人简介：创赛组组长
 - 研究方向：嵌入式
