@@ -1,0 +1,432 @@
+/* ============================================================
+   设计令牌 + Rspress 主题映射
+   方向：工业实用（Industrial / utilitarian）—— 深色主导、单色强调、
+        等宽字体做技术签名、发丝边框、网格氛围。
+   强调色纪律：全站只有一个强调色（鸿蒙蓝），只给关键动作与链接。
+   ============================================================ */
+
+/* ---------- 浅色：近白底 + 近黑字，不用纯白纯黑 ---------- */
+html:root {
+  /* 语义令牌 */
+  --color-bg: #fbfcfd;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f6f8;
+  --color-text: #14181d;
+  --color-muted: #5b6672;
+  /* 强调色取自 hero LOGO 实测色（logo.png：蓝 #3355ff / 紫 #9988ff）。
+     蓝=结构与主操作；紫=互动时的惊喜（hover 终态 / 选中文本 / 代码）。
+     两色不混合，通过状态过渡与主题分工产生关系 */
+  --color-accent: #3355ff;
+  --color-accent-2: #6d48e8;
+  --color-accent-soft: rgba(51, 85, 255, 0.1);
+  --color-accent-2-soft: rgba(109, 72, 232, 0.12);
+  --color-border: rgba(20, 24, 29, 0.1);
+  --color-border-strong: rgba(20, 24, 29, 0.18);
+
+  /* 字体：正文用系统中文字，技术签名用等宽 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC',
+    'HarmonyOS Sans SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', 'JetBrains Mono', Menlo,
+    Consolas, monospace;
+
+  /* 尺度 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+
+  /* 阴影：带环境色，不用纯黑 */
+  --shadow-1: 0 1px 2px rgba(16, 24, 40, 0.05), 0 2px 8px rgba(16, 24, 40, 0.04);
+  --shadow-2: 0 8px 28px rgba(16, 24, 40, 0.09);
+  --shadow-3: 0 24px 64px rgba(16, 24, 40, 0.13);
+
+  /* 动效：Apple 临界阻尼 response≈0.4s 的 Web 近似；spring 仅用于按压反馈 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 640ms;
+
+  /* ---- 映射到 Rspress 主题变量 ---- */
+  --rp-c-bg: var(--color-bg);
+  --rp-c-bg-soft: var(--color-surface-2);
+  --rp-c-bg-mute: #eceff3;
+  --rp-c-bg-alt: var(--color-surface);
+
+  --rp-c-divider: var(--color-border);
+  --rp-c-divider-light: rgba(20, 24, 29, 0.06);
+
+  --rp-c-text-1: var(--color-text);
+  --rp-c-text-2: var(--color-muted);
+  --rp-c-text-3: rgba(20, 24, 29, 0.4);
+  --rp-c-text-4: rgba(20, 24, 29, 0.2);
+  --rp-c-text-code: #38536b;
+  --rp-c-text-code-bg: var(--color-accent-soft);
+
+  --rp-c-brand: var(--color-accent);
+  --rp-c-brand-light: #5570ff;
+  --rp-c-brand-lighter: #7d8fff;
+  --rp-c-brand-dark: #2944d6;
+  --rp-c-brand-darker: #1f36ab;
+  --rp-c-brand-tint: var(--color-accent-soft);
+
+  --rp-c-gray: #64748b;
+  --rp-c-gray-light-1: #94a3b8;
+  --rp-c-gray-light-2: #b8c2cf;
+  --rp-c-gray-light-3: #cfd7e0;
+  --rp-c-gray-light-4: #e4e9ef;
+  --rp-c-gray-light-5: #f1f4f7;
+
+  --rp-c-link: var(--color-accent);
+}
+
+/* ---------- 深色：主导基调，压深的蓝调近黑 ---------- */
+html.dark {
+  --color-bg: #0e1116;
+  --color-surface: #151a21;
+  --color-surface-2: #1b2129;
+  --color-text: rgba(237, 242, 247, 0.94);
+  --color-muted: rgba(200, 212, 224, 0.62);
+  /* 深色下两色都提亮：紫在近黑底上最出彩，所以深色主题让紫多承担一点存在感 */
+  --color-accent: #7b95ff;
+  --color-accent-2: #b39dff;
+  --color-accent-soft: rgba(123, 149, 255, 0.14);
+  --color-accent-2-soft: rgba(179, 157, 255, 0.18);
+  --color-border: rgba(226, 232, 240, 0.12);
+  --color-border-strong: rgba(226, 232, 240, 0.2);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 24px 64px rgba(0, 0, 0, 0.55);
+
+  --rp-c-bg: var(--color-bg);
+  --rp-c-bg-soft: var(--color-surface);
+  --rp-c-bg-mute: var(--color-surface-2);
+  --rp-c-bg-alt: #080a0d;
+
+  --rp-c-divider: var(--color-border);
+  --rp-c-divider-light: rgba(226, 232, 240, 0.07);
+
+  --rp-c-text-1: var(--color-text);
+  --rp-c-text-2: var(--color-muted);
+  --rp-c-text-3: rgba(226, 232, 240, 0.42);
+  --rp-c-text-4: rgba(226, 232, 240, 0.2);
+  --rp-c-text-code: #c5d9f0;
+  --rp-c-text-code-bg: var(--color-accent-soft);
+
+  --rp-c-brand: var(--color-accent);
+  --rp-c-brand-light: #93a9ff;
+  --rp-c-brand-lighter: #b3c3ff;
+  --rp-c-brand-dark: #5f7af0;
+  --rp-c-brand-darker: #4a62d4;
+  --rp-c-brand-tint: var(--color-accent-soft);
+
+  --rp-c-gray: #8b97a8;
+  --rp-c-gray-light-1: #6b7684;
+  --rp-c-gray-light-2: #545e6b;
+  --rp-c-gray-light-3: #454e59;
+  --rp-c-gray-light-4: #333b45;
+  --rp-c-gray-light-5: #232a33;
+
+  --rp-c-link: var(--rp-c-brand-light);
+}
+
+/* ---------- 排版：中文字距与行高 ---------- */
+html:root body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rspress-doc,
+.rspress-doc p,
+.rspress-doc li {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+.rspress-doc h1,
+.rspress-doc h2,
+.rspress-doc h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* 数字与代码一律等宽 + 表格对齐，工业方向的骨架 */
+.rspress-doc code,
+.rspress-doc pre,
+.rspress-doc kbd {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 首页氛围层：左蓝右紫双色光晕 + 中性网格 + 细噪点 ---------- */
+/* 浅色下氛围整体收敛，深色下放开——两套主题各自成立 */
+html:root {
+  --atmosphere-opacity: 0.7;
+  --grain-opacity: 0.02;
+}
+html.dark {
+  --atmosphere-opacity: 0.95;
+  --grain-opacity: 0.04;
+}
+
+/* 只在首页挂载，避免干扰正文阅读 */
+html:root:has(.rspress-home-hero-text) body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(58rem 34rem at 14% -12%, var(--color-accent-soft), transparent 62%),
+    radial-gradient(46rem 30rem at 96% 4%, var(--color-accent-2-soft), transparent 58%),
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: auto, auto, 68px 68px, 68px 68px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+  opacity: var(--atmosphere-opacity);
+}
+
+html:root:has(.rspress-home-hero-text) body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- 一次编排好的入场序列（3 组，间隔 80ms） ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes osc-rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: none; }
+  }
+  .rspress-home-hero-text,
+  .rspress-home-hero-image,
+  .rspress-home-feature-card {
+    animation: osc-rise var(--dur-slow) var(--ease-out) both;
+  }
+  .rspress-home-hero-tagline { animation-delay: 80ms; }
+  .rspress-home-hero-image { animation-delay: 160ms; }
+  .rspress-home-feature-card:nth-child(1) { animation-delay: 240ms; }
+  .rspress-home-feature-card:nth-child(2) { animation-delay: 320ms; }
+  .rspress-home-feature-card:nth-child(3) { animation-delay: 400ms; }
+}
+
+/* ---------- 悬停惊喜：链接下划线扫过，而不是简单变色 ---------- */
+.rspress-doc p a,
+.rspress-doc li a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--rp-c-link), var(--rp-c-link));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+.rspress-doc p a:hover,
+.rspress-doc li a:hover {
+  background-size: 100% 1px;
+}
+
+/* 首页特性卡：边框点亮 + 轻微抬起 */
+.rspress-home-feature-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+.rspress-home-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-2);
+}
+
+/* ---------- 强调色引导视觉路径：当前位置与可点区域 ---------- */
+.rspress-sidebar-item a:hover,
+.rspress-nav-menu-item:hover,
+.rspress-toc-link:hover {
+  color: var(--color-accent);
+}
+
+/* 代码块与引用块用紫（第二强调色），蓝紫各管一摊 */
+.rspress-code-title,
+.rspress-doc blockquote {
+  color: var(--color-accent-2);
+}
+
+/* ---------- 状态接力：hover 时蓝滑向紫，不混出第三种颜色 ---------- */
+.rspress-doc p a,
+.rspress-doc li a {
+  color: var(--color-accent);
+}
+.rspress-doc p a:hover,
+.rspress-doc li a:hover {
+  color: var(--color-accent-2);
+  background-image: linear-gradient(
+    var(--color-accent-2),
+    var(--color-accent-2)
+  );
+}
+
+.rspress-home-feature-card:hover {
+  border-color: var(--color-accent-2);
+}
+
+/* 选中文本彩蛋：蓝色页面里划选文字冒出紫底 */
+html:root ::selection {
+  background: var(--color-accent-2-soft);
+}
+html.dark ::selection {
+  background: rgba(179, 157, 255, 0.28);
+}
+
+/* ---------- 滚动进度条：顶部 2px，滚动时蓝到紫接力填充 ---------- */
+/* scroll-driven animation 渐进增强，不支持则整个元素不渲染 */
+.osc-scroll-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .osc-scroll-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 200;
+    pointer-events: none;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    background: linear-gradient(
+      90deg,
+      var(--color-accent),
+      var(--color-accent-2)
+    );
+    animation: osc-scroll-grow linear both;
+    animation-timeline: scroll();
+  }
+  @keyframes osc-scroll-grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .osc-scroll-progress { display: none; }
+  }
+}
+
+/* ---------- 技术签名：页脚与代码标题用等宽小字 ---------- */
+.rspress-doc-footer,
+footer,
+.footer {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 搜索弹窗（portal 容器 #search-container，官方模板自带此 id） ----------
+   主题默认给输入框画 1px 品牌色硬边框，深色下非常突兀——
+   改成中性细边框，聚焦时才亮起品牌色光环 */
+#search-container div:has(> input) {
+  border-color: var(--color-border-strong);
+}
+#search-container div:has(> input:focus) {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+/* 输入框自身不要再叠加光环，避免双层 */
+#search-container input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ---------- 键盘可达性：焦点指示 ----------
+   链接/按钮用 2px 实线描边；输入框改用柔和光环——弹窗里的搜索框会自动聚焦，
+   硬描边会显得像多出来的一圈边框 */
+html:root a:focus-visible,
+html:root button:focus-visible,
+html:root [role='button']:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+html:root input:focus-visible,
+html:root textarea:focus-visible,
+html:root select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+/* hero 图只允许等比缩放，杜绝拉伸变形 */
+.rspress-home-hero-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ---------- 搜索弹窗弹出动画（Apple sheet：damping 0.8 / response 0.3s） ----------
+   动画类由 SearchPop 组件在弹窗聚焦时动态挂载，不依赖被哈希的类名 */
+@keyframes osc-search-root {
+  from { opacity: 0; }
+}
+.osc-search-root-in {
+  animation: osc-search-root var(--dur-fast, 160ms) ease-out;
+}
+
+/* 用独立的 scale / translate 属性，而不是 transform：
+   弹窗卡片可能自带 transform 做居中（如 translate(-50%,-50%)），
+   一旦动画覆写 transform 就会把居中位移吃掉，弹窗直接飞位 */
+@keyframes osc-search-card {
+  from {
+    scale: 0.94;
+    translate: 0 -10px;
+  }
+  to {
+    scale: 1;
+    translate: none;
+  }
+}
+.osc-search-in {
+  animation: osc-search-card 300ms var(--ease-spring, cubic-bezier(0.34, 1.4, 0.64, 1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .osc-search-root-in,
+  .osc-search-in {
+    animation: none;
+  }
+}
+
+/* ---------- 降级：尊重减弱动效与降低透明度 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html:root:has(.rspress-home-hero-text) body::before,
+  html:root:has(.rspress-home-hero-text) body::after {
+    display: none;
+  }
+  .rspress-home-feature-card,
+  .rspress-doc p a,
+  .rspress-doc li a {
+    transition: none;
+  }
+  .rspress-home-feature-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html:root:has(.rspress-home-hero-text) body::before {
+    opacity: 0.25;
+  }
+}
