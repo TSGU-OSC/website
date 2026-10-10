@@ -173,6 +173,55 @@
   color: var(--rp-c-text-1);
 }
 
+/* ---------- Fork 检测 ---------- */
+.ca-ghuser-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.ca-ghuser-row .ca-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.ca-btn-check {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 16px;
+  border: 1px solid var(--rp-c-divider);
+  border-radius: 8px;
+  background-color: var(--rp-c-bg);
+  color: var(--rp-c-text-1);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ca-btn-check:hover:not(:disabled) {
+  border-color: var(--rp-c-brand);
+  color: var(--rp-c-brand);
+}
+
+.ca-btn-check:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ca-fork-ok {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #07c160;
+}
+
+.ca-fork-none {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--rp-c-text-2);
+}
+
 /* ---------- 右侧预览 ---------- */
 .ca-side {
   display: flex;
