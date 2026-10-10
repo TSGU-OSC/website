@@ -5,14 +5,15 @@ import './AnnouncementCards.css';
 interface Announcement {
   title: string;
   date: string;
-  url: string;
-  source: 'wechat' | 'gitee' | 'other';
+  url: string | null;
+  source: 'wechat' | 'gitee' | 'other' | 'milestone';
 }
 
 const SOURCE_LABEL: Record<Announcement['source'], string> = {
   wechat: '微信推文',
   gitee: 'Gitee',
   other: '外部链接',
+  milestone: '里程碑',
 };
 
 /**
@@ -73,28 +74,47 @@ export default function AnnouncementCards({ count = 6 }: { count?: number }) {
       </div>
 
       <div className="ann-grid">
-        {list.map((item, i) => (
-          <a
-            key={item.url}
-            className="ann-card"
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ ['--ann-i' as string]: i }}
-          >
-            <div className="ann-card-top">
-              {item.date && <span className="ann-date">{item.date}</span>}
-              <span className={`ann-badge ann-badge-${item.source}`}>
-                {SOURCE_LABEL[item.source]}
-              </span>
+        {list.map((item, i) =>
+          item.url ? (
+            <a
+              key={item.url}
+              className="ann-card"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ ['--ann-i' as string]: i }}
+            >
+              <div className="ann-card-top">
+                {item.date && <span className="ann-date">{item.date}</span>}
+                <span className={`ann-badge ann-badge-${item.source}`}>
+                  {SOURCE_LABEL[item.source]}
+                </span>
+              </div>
+              <h3 className="ann-card-title">{item.title}</h3>
+              <div className="ann-card-foot">
+                <span className="ann-readmore">阅读原文</span>
+                <span className="ann-external" aria-hidden="true">↗</span>
+              </div>
+            </a>
+          ) : (
+            <div
+              key={`${item.title}-${i}`}
+              className="ann-card ann-card-static"
+              style={{ ['--ann-i' as string]: i }}
+            >
+              <div className="ann-card-top">
+                {item.date && <span className="ann-date">{item.date}</span>}
+                <span className={`ann-badge ann-badge-${item.source}`}>
+                  {SOURCE_LABEL[item.source]}
+                </span>
+              </div>
+              <h3 className="ann-card-title">{item.title}</h3>
+              <div className="ann-card-foot">
+                <span className="ann-readmore">社团里程碑</span>
+              </div>
             </div>
-            <h3 className="ann-card-title">{item.title}</h3>
-            <div className="ann-card-foot">
-              <span className="ann-readmore">阅读原文</span>
-              <span className="ann-external" aria-hidden="true">↗</span>
-            </div>
-          </a>
-        ))}
+          )
+        )}
       </div>
     </section>
   );

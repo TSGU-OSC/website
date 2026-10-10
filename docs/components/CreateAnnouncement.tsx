@@ -10,8 +10,10 @@ const SOURCE_LABEL: Record<Source, string> = {
   other: '外部链接',
 };
 
+// 社团成员（有仓库写权限）可直链编辑；外部提交者走 Fork 流程
 const GITHUB_EDIT_URL =
-  'https://github.com/TSGU-OSC/website/edit/master/docs/zh/announcement/index.md';
+  'https://github.com/TSGU-OSC/website/edit/master/announcements.md';
+const GITHUB_FORK_URL = 'https://github.com/TSGU-OSC/website/fork';
 
 function detectSource(url: string): Source {
   if (url.includes('mp.weixin.qq.com')) return 'wechat';
@@ -28,9 +30,9 @@ function todayStr(): string {
  * 创建公告卡片表单页（/announcement/create）。
  *
  * 静态站没有后端，新公告必须回流到仓库：
- * 表单生成标准 Markdown 片段，用户复制后粘贴到
- * docs/zh/announcement/index.md 末尾提交 PR；
- * 合并后 prebuild 钩子会自动把它同步进首页卡片。
+ * 表单生成标准 Markdown 片段，提交者 Fork 仓库后粘贴到
+ * 根目录 announcements.md 末尾，再向官方仓库发起 PR；
+ * 合并后 prebuild 钩子会自动把它同步进首页卡片与公告页。
  */
 export default function CreateAnnouncement() {
   const [url, setUrl] = useState('');
@@ -122,19 +124,33 @@ export default function CreateAnnouncement() {
             </button>
             <a
               className="ca-btn-secondary"
-              href={GITHUB_EDIT_URL}
+              href={GITHUB_FORK_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              打开 GitHub 编辑页 →
+              Fork 仓库并编辑 →
             </a>
           </div>
 
           <ol className="ca-steps">
             <li>点击「复制 Markdown 片段」</li>
-            <li>打开 GitHub 编辑页，把片段<strong>粘贴到文件末尾</strong></li>
-            <li>提交 PR，合并后自动出现在官网首页与公告页</li>
+            <li>
+              点击「Fork 仓库并编辑」（已 Fork 过会直接进入你的 Fork），
+              在<strong>你自己的 Fork</strong> 中打开根目录 <code>announcements.md</code>
+            </li>
+            <li>把片段<strong>粘贴到文件末尾</strong>，提交更改</li>
+            <li>
+              向 <code>TSGU-OSC/website</code> 发起 Pull Request，
+              合并后自动同步到官网首页与公告页
+            </li>
           </ol>
+
+          <p className="ca-member-link">
+            是社团仓库成员？
+            <a href={GITHUB_EDIT_URL} target="_blank" rel="noopener noreferrer">
+              也可以直接打开编辑页 →
+            </a>
+          </p>
         </div>
 
         {/* 右：实时预览 */}

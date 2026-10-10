@@ -1,0 +1,97 @@
+/* 公告页全量卡片墙 —— 年份分组 + blur-fade 滚动入场（animate-ui 风格的纯 CSS 实现） */
+
+.al-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+/* ---------- 年份标题 ---------- */
+.al-year {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rp-c-divider);
+}
+
+.al-year-num {
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--rp-c-text-1);
+}
+
+.al-year-count {
+  font-size: 13px;
+  color: var(--rp-c-text-2);
+}
+
+/* ---------- blur-fade 入场动画（按年份分组触发，组内交错） ---------- */
+.al-year-group .al-year {
+  opacity: 0;
+  translate: 0 12px;
+}
+
+.al-year-group .ann-card {
+  opacity: 0;
+  translate: 0 20px;
+  filter: blur(6px);
+}
+
+.al-year-group.al-in .al-year {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.al-year-group.al-in .ann-card {
+  opacity: 1;
+  translate: 0 0;
+  filter: blur(0);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  transition-delay:
+    calc(80ms + var(--ann-i) * 60ms),
+    calc(80ms + var(--ann-i) * 60ms),
+    calc(80ms + var(--ann-i) * 60ms),
+    0ms,
+    0ms,
+    0ms;
+}
+
+/* 无障碍：减少动态偏好下直接呈现 */
+@media (prefers-reduced-motion: reduce) {
+  .al-year-group .al-year,
+  .al-year-group .ann-card {
+    opacity: 1;
+    translate: none;
+    filter: none;
+  }
+
+  .al-year-group.al-in .al-year,
+  .al-year-group.al-in .ann-card {
+    transition: none;
+    transition-delay: 0ms;
+  }
+}
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 640px) {
+  .al-list {
+    gap: 32px;
+  }
+
+  .al-year-num {
+    font-size: 22px;
+  }
+}
