@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './AnnouncementCards.css';
 import './CreateAnnouncement.css';
 
@@ -14,6 +14,10 @@ const SOURCE_LABEL: Record<Source, string> = {
 // Fork 中编辑，仓库成员则提示新建分支发 PR —— 一条链接覆盖所有提交者
 const GITHUB_EDIT_URL =
   'https://github.com/TSGU-OSC/website/edit/master/announcements.md';
+// 本地预览时 master 上还没有 announcements.md（要随本功能 PR 合入），
+// 链接切到功能分支，否则 404
+const GITHUB_EDIT_URL_PREVIEW =
+  'https://github.com/TSGU-OSC/website/edit/new_page/announcements.md';
 
 function detectSource(url: string): Source {
   if (url.includes('mp.weixin.qq.com')) return 'wechat';
@@ -39,6 +43,16 @@ export default function CreateAnnouncement() {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState(todayStr());
   const [copied, setCopied] = useState(false);
+  const [editUrl, setEditUrl] = useState(GITHUB_EDIT_URL);
+  const [isLocalPreview, setIsLocalPreview] = useState(false);
+
+  useEffect(() => {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+      setEditUrl(GITHUB_EDIT_URL_PREVIEW);
+      setIsLocalPreview(true);
+    }
+  }, []);
 
   const urlValid = /^https?:\/\/\S+$/.test(url.trim());
   const ready = urlValid && title.trim().length > 0 && date.trim().length > 0;
@@ -124,13 +138,20 @@ export default function CreateAnnouncement() {
             </button>
             <a
               className="ca-btn-secondary"
-              href={GITHUB_EDIT_URL}
+              href={editUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
               去 GitHub 提交 →
             </a>
           </div>
+
+          {isLocalPreview && (
+            <p className="ca-preview-note">
+              本地预览模式：提交链接已指向 <code>new_page</code> 分支
+              （<code>announcements.md</code> 还未合入 master，正式上线后自动指回 master）
+            </p>
+          )}
 
           <ol className="ca-steps">
             <li>点击「复制 Markdown 片段」</li>
