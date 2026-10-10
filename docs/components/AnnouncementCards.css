@@ -164,6 +164,27 @@
   background-color: var(--rp-c-bg-mute);
 }
 
+.ann-badge-milestone {
+  color: var(--rp-c-text-2);
+  background-color: var(--rp-c-bg-mute);
+}
+
+/* 无链接的里程碑：静态卡片，不可点击 */
+.ann-card-static {
+  cursor: default;
+  background-color: var(--rp-c-bg);
+}
+
+.ann-card-static:hover {
+  --ann-lift: 0px;
+  border-color: var(--rp-c-divider);
+  box-shadow: none;
+}
+
+.ann-card-static:hover .ann-card-title {
+  color: var(--rp-c-text-1);
+}
+
 .ann-card-title {
   flex: 1;
   margin: 0;

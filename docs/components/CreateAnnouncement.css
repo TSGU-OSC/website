@@ -131,6 +131,30 @@
   color: var(--rp-c-text-2);
 }
 
+.ca-steps code {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: var(--rp-c-bg-mute);
+  color: var(--rp-c-text-1);
+}
+
+.ca-member-link {
+  margin: 0;
+  font-size: 13px;
+  color: var(--rp-c-text-2);
+}
+
+.ca-member-link a {
+  color: var(--rp-c-brand);
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.ca-member-link a:hover {
+  text-decoration: underline;
+}
+
 /* ---------- 右侧预览 ---------- */
 .ca-side {
   display: flex;

@@ -114,6 +114,12 @@
     "source": "wechat"
   },
   {
+    "title": "产教融合信息系统试运行",
+    "date": "2024.10.12",
+    "url": null,
+    "source": "milestone"
+  },
+  {
     "title": "开源鸿蒙社AI SIG组荣获华为昇腾AI创新大赛铜奖",
     "date": "2024.10.10",
     "url": "https://mp.weixin.qq.com/s/V2ljOXZpgHUZHMT0-Id2mw",
@@ -138,10 +144,34 @@
     "source": "gitee"
   },
   {
+    "title": "开源鸿蒙社门户网站正式上线",
+    "date": "2024.4.20",
+    "url": null,
+    "source": "milestone"
+  },
+  {
     "title": "华为昇腾AI创享日",
     "date": "2024.3.26",
     "url": "https://gitee.com/TSGU-OSC/OSC_main/blob/master/event/active10/README.md",
     "source": "gitee"
+  },
+  {
+    "title": "中科院2024开源之夏启动会",
+    "date": "2024.3.10",
+    "url": null,
+    "source": "milestone"
+  },
+  {
+    "title": "HDD•她力量",
+    "date": "2024.3.8",
+    "url": null,
+    "source": "milestone"
+  },
+  {
+    "title": "社团管理系统正式上线",
+    "date": "2024.3.4",
+    "url": null,
+    "source": "milestone"
   },
   {
     "title": "开放原子校源行（北理工站）",
@@ -174,6 +204,12 @@
     "source": "gitee"
   },
   {
+    "title": "开源鸿蒙社首届程序员节",
+    "date": "2023.10.24",
+    "url": null,
+    "source": "milestone"
+  },
+  {
     "title": "首次技术讲座",
     "date": "2023.10.16",
     "url": "https://gitee.com/TSGU-OSC/OSC_main/blob/master/event/active3/README.md",
@@ -184,6 +220,12 @@
     "date": "2023.9.27",
     "url": "https://gitee.com/TSGU-OSC/OSC_main/blob/master/event/active2/README.md",
     "source": "gitee"
+  },
+  {
+    "title": "开源鸿蒙社正式成立",
+    "date": "2023.6.25",
+    "url": null,
+    "source": "milestone"
   },
   {
     "title": "Gitee建立时间",
