@@ -155,6 +155,24 @@
   text-decoration: underline;
 }
 
+.ca-preview-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--rp-c-text-2);
+  background-color: var(--rp-c-bg-mute);
+}
+
+.ca-preview-note code {
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: var(--rp-c-bg);
+  color: var(--rp-c-text-1);
+}
+
 /* ---------- 右侧预览 ---------- */
 .ca-side {
   display: flex;
