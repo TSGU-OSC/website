@@ -45,6 +45,10 @@ export default function CreateAnnouncement() {
   const [copied, setCopied] = useState(false);
   const [editUrl, setEditUrl] = useState(GITHUB_EDIT_URL);
   const [isLocalPreview, setIsLocalPreview] = useState(false);
+  const [ghUser, setGhUser] = useState('');
+  const [forkState, setForkState] = useState<
+    'idle' | 'checking' | 'exists' | 'none' | 'error'
+  >('idle');
 
   useEffect(() => {
     const host = window.location.hostname;
@@ -53,6 +57,35 @@ export default function CreateAnnouncement() {
       setIsLocalPreview(true);
     }
   }, []);
+
+  // 免鉴权 GitHub API（60 次/小时/IP）：检测提交者是否已有 Fork
+  const checkFork = async () => {
+    const u = ghUser.trim();
+    if (!u || forkState === 'checking') return;
+    setForkState('checking');
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${encodeURIComponent(u)}/website`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setForkState(data.fork ? 'exists' : 'none');
+      } else if (res.status === 404) {
+        setForkState('none');
+      } else {
+        setForkState('error');
+      }
+    } catch {
+      setForkState('error');
+    }
+  };
+
+  const userForkEditUrl = `https://github.com/${ghUser.trim()}/website/edit/master/announcements.md`;
+  // 已检测到 Fork → 直达本人 Fork 编辑页（仓库成员也走这里）；
+  // 未检测/无 Fork → 上游编辑链接（GitHub 自动引导建 Fork）
+  const submitUrl = forkState === 'exists' ? userForkEditUrl : editUrl;
+  const submitLabel =
+    forkState === 'exists' ? '在我的 Fork 中编辑 →' : '去 GitHub 提交 →';
 
   const urlValid = /^https?:\/\/\S+$/.test(url.trim());
   const ready = urlValid && title.trim().length > 0 && date.trim().length > 0;
@@ -128,6 +161,55 @@ export default function CreateAnnouncement() {
             <p className="ca-help">默认今天，格式如 2026.9.30，时间范围可写 2026.9.30 - 2026.10.2</p>
           </div>
 
+          <div className="ca-field">
+            <label className="ca-label" htmlFor="ca-ghuser">
+              GitHub 用户名
+            </label>
+            <div className="ca-ghuser-row">
+              <input
+                id="ca-ghuser"
+                className="ca-input"
+                type="text"
+                placeholder="你的 GitHub 用户名"
+                value={ghUser}
+                onChange={(e) => {
+                  setGhUser(e.target.value);
+                  setForkState('idle');
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    checkFork();
+                  }
+                }}
+              />
+              <button
+                className="ca-btn-check"
+                disabled={!ghUser.trim() || forkState === 'checking'}
+                onClick={checkFork}
+              >
+                {forkState === 'checking' ? '检测中…' : '检测我的 Fork'}
+              </button>
+            </div>
+            <p className="ca-help">
+              所有人（包括仓库管理者）都通过自己的 Fork 提交，保持官方仓库历史干净
+            </p>
+            {forkState === 'exists' && (
+              <p className="ca-fork-ok">
+                ✓ 已找到你的 Fork：{ghUser.trim()}/website。若编辑时提示文件不存在，
+                请先在你的 Fork 页面点 <strong>Sync fork</strong> 同步最新代码
+              </p>
+            )}
+            {forkState === 'none' && (
+              <p className="ca-fork-none">
+                未找到你的 Fork——点下方「去 GitHub 提交」，GitHub 会自动引导你一键创建
+              </p>
+            )}
+            {forkState === 'error' && (
+              <p className="ca-error">检测失败（网络或 API 限流），不影响正常提交</p>
+            )}
+          </div>
+
           <div className="ca-actions">
             <button
               className="ca-btn-primary"
@@ -138,11 +220,11 @@ export default function CreateAnnouncement() {
             </button>
             <a
               className="ca-btn-secondary"
-              href={editUrl}
+              href={submitUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              去 GitHub 提交 →
+              {submitLabel}
             </a>
           </div>
 
@@ -156,13 +238,12 @@ export default function CreateAnnouncement() {
           <ol className="ca-steps">
             <li>点击「复制 Markdown 片段」</li>
             <li>
-              点击「去 GitHub 提交」，GitHub 会自动处理你的身份：
-              <strong>没 Fork 过</strong>会引导你一键 Fork；
-              <strong>已 Fork 过</strong>会直接在你自己的 Fork 中打开编辑器
+              填写 GitHub 用户名并「检测我的 Fork」：已 Fork 过会直达
+              <strong>你自己 Fork</strong> 的编辑页；没 Fork 过会自动引导你一键创建
             </li>
             <li>
               在编辑器里把片段<strong>粘贴到文件末尾</strong>，点击
-              <strong> Propose changes / Commit changes</strong>
+              <strong> Commit changes</strong>
             </li>
             <li>
               GitHub 会自动跳转到 PR 页面，确认目标是{' '}
@@ -171,7 +252,7 @@ export default function CreateAnnouncement() {
           </ol>
 
           <p className="ca-member-link">
-            是社团仓库成员？页面会提示你新建分支提交 PR，同样符合规范。
+            包括仓库管理者在内，所有人都通过自己的 Fork 提交 PR，官方仓库历史保持干净。
           </p>
         </div>
 
