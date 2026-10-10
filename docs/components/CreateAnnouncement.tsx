@@ -10,10 +10,10 @@ const SOURCE_LABEL: Record<Source, string> = {
   other: '外部链接',
 };
 
-// 社团成员（有仓库写权限）可直链编辑；外部提交者走 Fork 流程
+// GitHub 编辑链接自带身份分流：未 Fork 引导创建 Fork，已 Fork 自动在自己的
+// Fork 中编辑，仓库成员则提示新建分支发 PR —— 一条链接覆盖所有提交者
 const GITHUB_EDIT_URL =
   'https://github.com/TSGU-OSC/website/edit/master/announcements.md';
-const GITHUB_FORK_URL = 'https://github.com/TSGU-OSC/website/fork';
 
 function detectSource(url: string): Source {
   if (url.includes('mp.weixin.qq.com')) return 'wechat';
@@ -124,32 +124,33 @@ export default function CreateAnnouncement() {
             </button>
             <a
               className="ca-btn-secondary"
-              href={GITHUB_FORK_URL}
+              href={GITHUB_EDIT_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Fork 仓库并编辑 →
+              去 GitHub 提交 →
             </a>
           </div>
 
           <ol className="ca-steps">
             <li>点击「复制 Markdown 片段」</li>
             <li>
-              点击「Fork 仓库并编辑」（已 Fork 过会直接进入你的 Fork），
-              在<strong>你自己的 Fork</strong> 中打开根目录 <code>announcements.md</code>
+              点击「去 GitHub 提交」，GitHub 会自动处理你的身份：
+              <strong>没 Fork 过</strong>会引导你一键 Fork；
+              <strong>已 Fork 过</strong>会直接在你自己的 Fork 中打开编辑器
             </li>
-            <li>把片段<strong>粘贴到文件末尾</strong>，提交更改</li>
             <li>
-              向 <code>TSGU-OSC/website</code> 发起 Pull Request，
-              合并后自动同步到官网首页与公告页
+              在编辑器里把片段<strong>粘贴到文件末尾</strong>，点击
+              <strong> Propose changes / Commit changes</strong>
+            </li>
+            <li>
+              GitHub 会自动跳转到 PR 页面，确认目标是{' '}
+              <code>TSGU-OSC/website</code> 的 <code>master</code>，提交即可
             </li>
           </ol>
 
           <p className="ca-member-link">
-            是社团仓库成员？
-            <a href={GITHUB_EDIT_URL} target="_blank" rel="noopener noreferrer">
-              也可以直接打开编辑页 →
-            </a>
+            是社团仓库成员？页面会提示你新建分支提交 PR，同样符合规范。
           </p>
         </div>
 
