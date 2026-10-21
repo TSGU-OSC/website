@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'rspress/theme';
 import items from './announcements.json';
 import './AnnouncementCards.css';
 
@@ -63,13 +64,15 @@ export default function AnnouncementCards({ count = 6 }: { count?: number }) {
           <p className="ann-subtitle">社团动态与活动纪实，点击卡片查看原文</p>
         </div>
         <div className="ann-actions">
-          <a className="ann-create" href="/announcement/create">
+          {/* 用主题的 Link 组件而非裸 <a>：它会按站点 route 配置自动补 .html，
+              避免站点未开启 cleanUrls 时 /announcement/create 在静态托管上 404 */}
+          <Link className="ann-create" href="/announcement/create">
             <span aria-hidden="true">＋</span> 创建公告
-          </a>
-          <a className="ann-more" href="/announcement/">
+          </Link>
+          <Link className="ann-more" href="/announcement/">
             查看全部
             <span className="ann-more-arrow" aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
       </div>
 
