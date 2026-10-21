@@ -269,3 +269,30 @@
     position: static;
   }
 }
+
+/* ---------- Fork 检测补充状态（本次新增，仅追加） ---------- */
+.ca-fork-stale {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #b45309;
+}
+
+.ca-fork-stale a {
+  color: var(--rp-c-brand);
+  text-decoration: none;
+}
+
+.ca-fork-stale a:hover {
+  text-decoration: underline;
+}
+
+.ca-fork-ok code,
+.ca-fork-stale code,
+.ca-error code {
+  font-size: 12px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: var(--rp-c-bg-mute);
+  color: var(--rp-c-text-1);
+}
