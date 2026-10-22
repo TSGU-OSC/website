@@ -38,6 +38,19 @@ const DATE_LIKE = /(\d{4})\s*[.\-/年]\s*(\d{1,2})\s*[.\-/月]\s*(\d{1,2})\s*日
 // 日期之间允许的分隔符
 const RANGE_SEP = /^[-~至到/]*$/;
 
+/** 校验公告链接为可用的 http(s) 站点地址。 */
+function isValidHttpUrl(raw) {
+  if (!/^https?:\/\/\S+$/i.test(raw)) return false;
+  try {
+    const parsed = new URL(raw);
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return false;
+    const host = parsed.hostname;
+    return Boolean(host) && (host === 'localhost' || host.includes('.'));
+  } catch {
+    return false;
+  }
+}
+
 /** 校验为真实存在的日历日期，返回时间戳；非法返回 null */
 function toTime(y, mo, d) {
   if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
@@ -176,6 +189,13 @@ for (let i = 0; i < lines.length; i += 1) {
     }
     rawTitle = linkMatch[1];
     url = linkMatch[2];
+    if (!isValidHttpUrl(url)) {
+      errors.push({
+        line: lineNo,
+        msg: '链接地址无效，必须是包含有效主机名的 http:// 或 https:// 地址',
+      });
+      continue;
+    }
   } else {
     rawTitle = body;
   }

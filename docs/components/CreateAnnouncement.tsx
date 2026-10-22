@@ -228,7 +228,16 @@ export default function CreateAnnouncement() {
         setForkState('error');
         return;
       }
-      // 文件检查因其它原因失败时不拦用户（Fork 本身有效），仍按 exists 处理
+      // 文件检查因其它原因失败时不能假定文件存在，避免误报为可编辑状态
+      if (!fileRes.ok) {
+        setForkError(
+          fileRes.status === 403
+            ? 'GitHub API 暂时拒绝了文件检查请求，请稍后重试；也可以继续手动提交'
+            : `无法确认 Fork 中是否存在 announcements.md（HTTP ${fileRes.status}），请稍后重试`
+        );
+        setForkState('error');
+        return;
+      }
       setForkState('exists');
     } catch {
       setForkError('检测失败（网络或 API 异常），不影响正常提交');
@@ -239,8 +248,8 @@ export default function CreateAnnouncement() {
   const user = ghUser.trim();
   const userForkBranch = forkBranch || UPSTREAM_BRANCH;
   const userForkEditUrl = `https://github.com/${user}/website/edit/${userForkBranch}/announcements.md`;
-  // Fork 落后时的同步页：Sync fork 后编辑页才有 announcements.md
-  const userForkSyncUrl = `https://github.com/${user}/website/sync`;
+  // Fork 落后时先打开 Fork 仓库主页，由用户点击 GitHub 页面上的 Sync fork → Update branch
+  const userForkHomeUrl = `https://github.com/${user}/website`;
   // 手动创建 PR / Compare & pull request 直达链接（base 为上游分支）
   const compareUrl = `https://github.com/${UPSTREAM_REPO}/compare/${UPSTREAM_BRANCH}...${user}:${userForkBranch}`;
 
@@ -386,11 +395,11 @@ export default function CreateAnnouncement() {
             )}
             {forkState === 'stale' && (
               <p className="ca-fork-stale">
-                你的 Fork 还没有该文件，请先{' '}
-                <a href={userForkSyncUrl} target="_blank" rel="noopener noreferrer">
-                  Sync fork
+                你的 Fork 还没有该文件，请先打开{' '}
+                <a href={userForkHomeUrl} target="_blank" rel="noopener noreferrer">
+                  Fork 仓库主页
                 </a>{' '}
-                同步最新代码后再编辑
+                并点击 GitHub 页面上的「Sync fork」→「Update branch」同步最新代码后再编辑
               </p>
             )}
             {forkState === 'none' && (
