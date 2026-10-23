@@ -254,19 +254,16 @@ export default function CreateAnnouncement() {
   const compareUrl = `https://github.com/${UPSTREAM_REPO}/compare/${UPSTREAM_BRANCH}...${user}:${userForkBranch}`;
 
   // 已检测到 Fork → 直达本人 Fork 编辑页（仓库成员也走这里）；
-  // Fork 落后 → 先去 Sync；未检测/无 Fork → 上游编辑链接（GitHub 自动引导建 Fork）
-  const submitUrl =
+  // Fork 落后 → 先回 Fork 主页点 Sync；未检测/无 Fork → 上游编辑链接（GitHub 自动引导建 Fork）
+  //
+  // 链接与文案必须由同一份条件派生：拆成两个并列三元时曾出现「改了一处、
+  // 另一处仍引用旧变量」的漂移（userForkSyncUrl 改名后遗漏），故合并为单个对象。
+  const submitAction =
     forkState === 'exists'
-      ? userForkEditUrl
+      ? { url: userForkEditUrl, label: '在我的 Fork 中编辑 →' }
       : forkState === 'stale'
-        ? userForkSyncUrl
-        : editUrl;
-  const submitLabel =
-    forkState === 'exists'
-      ? '在我的 Fork 中编辑 →'
-      : forkState === 'stale'
-        ? '先 Sync 我的 Fork →'
-        : '去 GitHub 提交 →';
+        ? { url: userForkHomeUrl, label: '先 Sync 我的 Fork →' }
+        : { url: editUrl, label: '去 GitHub 提交 →' };
 
   const urlValid = isValidHttpUrl(url);
   const dateText = date.trim();
@@ -428,11 +425,11 @@ export default function CreateAnnouncement() {
             </button>
             <a
               className="ca-btn-secondary"
-              href={submitUrl}
+              href={submitAction.url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {submitLabel}
+              {submitAction.label}
             </a>
             {/* Fork 确认存在时才给 PR 直达链接，避免把用户带到空对比页 */}
             {forkState === 'exists' && (
