@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/gen-announcements.mjs",
     "dev": "rspress dev",
+    "prebuild": "node scripts/gen-announcements.mjs",
     "build": "rspress build",
     "preview": "rspress preview"
   },
