@@ -16,6 +16,8 @@
 
 - 🔗[gitee](https://gitee.com/TSGU-OSC)
 
+- 🔗[AtomGit](https://atomgit.com/tsgu-osc-org)
+
 ### 社团仓库导航
 
 - [点击即可进入导航仓库](https://gitee.com/TSGU-OSC/OSC_main)
