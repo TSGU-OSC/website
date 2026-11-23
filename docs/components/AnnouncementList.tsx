@@ -1,21 +1,7 @@
 import { useEffect, useRef } from 'react';
-import items from './announcements.json';
+import { announcements, SOURCE_LABEL, type Announcement } from './announcements-data';
 import './AnnouncementCards.css';
 import './AnnouncementList.css';
-
-interface Announcement {
-  title: string;
-  date: string;
-  url: string | null;
-  source: 'wechat' | 'gitee' | 'other' | 'milestone';
-}
-
-const SOURCE_LABEL: Record<Announcement['source'], string> = {
-  wechat: '微信推文',
-  gitee: 'Gitee',
-  other: '外部链接',
-  milestone: '里程碑',
-};
 
 function yearOf(date: string): string {
   const m = date.match(/^(\d{4})/);
@@ -64,7 +50,7 @@ function Card({ item, order }: { item: Announcement; order: number }) {
 
 /**
  * 公告页全量卡片墙。
- * - 展示 announcements.json 全部条目，按年份分组（新→旧）
+ * - 展示 announcements.md 的全部条目（构建期注入），按年份分组（新→旧）
  * - 有链接的渲染为可跳转卡片，无链接的里程碑渲染为静态卡片
  * - 每个年份分组滚动进入视口时，卡片依次 blur-fade 浮入
  *   （animate-ui 同款效果，纯 CSS 实现，无额外依赖）
@@ -95,7 +81,7 @@ export default function AnnouncementList() {
 
   // 按年份分组，保持新→旧顺序；组内序号用于动画交错（封顶 12 张）
   const groups: { year: string; list: Announcement[] }[] = [];
-  (items as Announcement[]).forEach((it) => {
+  announcements.forEach((it) => {
     const y = yearOf(it.date);
     const g = groups.find((g) => g.year === y);
     if (g) g.list.push(it);

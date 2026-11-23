@@ -1,15 +1,61 @@
 import * as path from 'path';
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'rspress/config';
-import { LastUpdated } from 'rspress/theme'; 
+import { LastUpdated } from 'rspress/theme';
 import rspressPluginAlignImage from 'rspress-plugin-align-image';
+import { parseAnnouncements } from './docs/components/announcements-core.mjs';
 
+/**
+ * 构建期读取根目录 announcements.md 并解析成公告数组。
+ *
+ * 这里取代了原来「predev/prebuild 生成 docs/components/announcements.json」的做法：
+ * 仓库里只有 md 这一个数据源，不再有任何需要提交或清理的中间产物。
+ * 解析出的数据通过 builderConfig.source.define 注入前端，组件直接读 __ANNOUNCEMENTS__。
+ *
+ * 解析失败直接抛错，让 dev / build 立刻停下来——坏数据不会静默上线。
+ */
+function loadAnnouncements() {
+  const source = path.join(__dirname, 'announcements.md');
+  let md: string;
+  try {
+    md = readFileSync(source, 'utf-8');
+  } catch {
+    throw new Error(
+      `[announcements] 找不到公告源文件：${source}\n` +
+        '请在仓库根目录创建 announcements.md，每行一条公告，例如：\n' +
+        '  ### [公告标题：2024.9.27](https://mp.weixin.qq.com/s/xxxx)\n' +
+        '  ### 里程碑标题：2023.6.25'
+    );
+  }
+
+  const { items, errors, warnings } = parseAnnouncements(md);
+
+  for (const w of warnings) {
+    console.warn(`[announcements] 警告 第 ${w.line} 行：${w.msg}`);
+  }
+
+  if (errors.length > 0) {
+    const detail = errors
+      .map((e) => `  第 ${e.line} 行：${e.msg}`)
+      .join('\n');
+    throw new Error(
+      `[announcements] announcements.md 有 ${errors.length} 处错误，已中止构建：\n${detail}`
+    );
+  }
+
+  return items;
+}
+
+const announcements = loadAnnouncements();
 
 export default defineConfig({
-  // builderConfig: {
-  //   output: {
-  //     assetPrefix: 'https://tsgu-osc.gitee.io/website/',
-  //   },
-  // },
+  builderConfig: {
+    source: {
+      define: {
+        __ANNOUNCEMENTS__: JSON.stringify(announcements),
+      },
+    },
+  },
   // base: '/website/',
   ssg:true,
   // route: {

@@ -1,26 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'rspress/theme';
-import items from './announcements.json';
+import { announcements, SOURCE_LABEL } from './announcements-data';
 import './AnnouncementCards.css';
-
-interface Announcement {
-  title: string;
-  date: string;
-  url: string | null;
-  source: 'wechat' | 'gitee' | 'other' | 'milestone';
-}
-
-const SOURCE_LABEL: Record<Announcement['source'], string> = {
-  wechat: '微信推文',
-  gitee: 'Gitee',
-  other: '外部链接',
-  milestone: '里程碑',
-};
 
 /**
  * 首页公告卡片区。
- * - 数据来自 scripts/gen-announcements.mjs 生成的 announcements.json
- *   （自动同步 announcement/index.md，无需手工维护）
+ * - 数据来自 announcements.md，构建期由 rspress.config.ts 解析后注入，
+ *   不再依赖任何生成的 JSON 文件
  * - 滚动进入视口时卡片依次浮入（IntersectionObserver + 交错延迟）
  * - prefers-reduced-motion 下直接呈现，无动画
  */
@@ -49,7 +35,7 @@ export default function AnnouncementCards({ count = 6 }: { count?: number }) {
     return () => io.disconnect();
   }, []);
 
-  const list = (items as Announcement[]).slice(0, count);
+  const list = announcements.slice(0, count);
 
   return (
     <section
