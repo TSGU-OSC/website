@@ -245,17 +245,17 @@ DAG 即 有向无环图，一些实际问题中的二元关系都可使用 DAG �
 
 ## 推荐OJ（online judge）在线测评刷题网站
 
-### [洛古](www.luogu.com.cn/) 
+### [洛谷](https://www.luogu.com.cn/) 
 
-### [牛客](ac.nowcoder.com/) 
+### [牛客](https://ac.nowcoder.com/) 
 
-### [QOJ](qoj.ac/) 
+### [QOJ](https://qoj.ac/) 
 
-### [ATC](atcoder.jp/) 
+### [ATC](https://atcoder.jp/) 
 
-### [CF](codeforces.com)
+### [CF](https://codeforces.com)
 
-###  [UOJ](uoj.ac/)
+###  [UOJ](https://uoj.ac/)
 
 
 
