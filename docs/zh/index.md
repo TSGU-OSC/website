@@ -25,6 +25,11 @@ features:
     link: https://docs.tsguas.cn/
     icon: 📦️
 
+  - title: 1024 代码画廊
+    details: 1024 代码画廊是社团成员们参与 1024·程序员节 活动时提交到活动仓库的作品展示网站。
+    link: https://osc-harmony1024-gallery.pages.dev/
+    icon: 🎉
+
   - title: 社团微信公众号
     details: 社团微信公众号是为社团宣传和推广的重要平台。社团已经通过公众号发布了社团资讯、活动信息、作品展示等诸多内容。
     link: https://mp.weixin.qq.com/s/-hXizFPHLnVHKgunq002Yg
