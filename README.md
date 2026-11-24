@@ -20,6 +20,9 @@
 **找资源**
 技术文档（[docs.tsguas.cn](https://docs.tsguas.cn/)）、社团微信公众号、[1024 代码画廊](https://osc-harmony1024-gallery.pages.dev/)。
 
+**English**
+一页英文首页（[`/en/`](https://osc.tsguas.cn/en/)），结构与中文首页一致：hero + 三个入口（技术文档、1024 画廊、公众号）。改中文首页这几个入口时，顺手同步这一页；内页不翻译。
+
 ## 技术栈
 
 Rspress 1.36（SSG）+ React/TSX 自研组件，Node.js 18+，npm 管理依赖。构建产物是纯静态文件，放在任意静态托管都能跑。
@@ -36,7 +39,7 @@ npm run preview  # 预览构建结果
 ## 参与贡献
 
 - **发公告**：打开线上 [`/announcement/create`](https://osc.tsguas.cn/announcement/create)，填标题、日期、原文链接，复制生成的片段，按页面引导 Fork 仓库并发 PR。
-- **改内容**：Fork → 修改 `docs/zh`（英文站为 `docs/en`）里的 Markdown → 提 PR。
+- **改内容**：Fork → 修改 `docs/zh` 里的 Markdown（英文概览为 `docs/en/index.md`）→ 提 PR。
 
 包括仓库管理员在内，所有人都走 Fork + PR，`master` 有分支保护。公告格式、目录约定、校验命令等细节见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 

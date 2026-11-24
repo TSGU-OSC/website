@@ -7,15 +7,16 @@
 | 想改什么 | 改哪里 |
 | --- | --- |
 | 公告 | 根目录 `announcements.md` |
-| 首页 hero / 功能入口 | `docs/zh/index.md`（英文 `docs/en/index.md`） |
+| 首页 hero / 功能入口 | `docs/zh/index.md` |
 | 社团介绍、项目表 | `docs/zh/content/index.md` |
 | 成员名录 | `docs/zh/content/members/` |
 | 人才培养、学习路线 | `docs/zh/content/personalDevelopment/` |
 | 新生指南 | `docs/zh/guide/`（6 个分章目录） |
 | 纳新信息 | `docs/zh/recruitment/index.md` |
+| 英文首页 | `docs/en/index.md`（与中文首页同步，仅此一页） |
 | 侧栏 / 导航条目 | 对应目录的 `_meta.json` |
 
-英文站 `docs/en/` 与中文站结构镜像。公告页是例外：中文站由 `announcements.md` 自动生成，英文站仍是手写 Markdown。
+英文站只保留 `/en/` 一页，结构与中文首页一致（hero + 三个功能入口）。改中文首页的入口时两边一起改，但**不要补译内页**——之前全站机翻的镜像没人校对，删掉比维护更划算。新增中文页面不需要同步英文。
 
 ## 公告怎么写
 

@@ -1,0 +1,17 @@
+/**
+ * 首屏 hero 按钮的左右留白。
+ *
+ * 主题的 big 尺寸按钮只设了 min-width（142px）和固定行高，没有水平内边距：
+ * 中文「社团简介」这类短词看不出问题，英文「Freshman Guide」一旦超过 142px，
+ * 文字就顶到按钮边缘，看起来又窄又挤，还比旁边的按钮矮一截。
+ * 这里补上内边距与最小宽度，中英文按钮视觉上一致。
+ *
+ * 选择器按 hero 的语义类定位（.rspress-home-hero-tagline / -text 的相邻兄弟），
+ * 不依赖主题编译后的哈希类名，升级 Rspress 时不容易失效。
+ */
+.rspress-home-hero-tagline + div a[class*='button_'],
+.rspress-home-hero-text + div a[class*='button_'] {
+  min-width: 9rem;
+  padding: 0 1.75rem;
+  box-sizing: border-box;
+}

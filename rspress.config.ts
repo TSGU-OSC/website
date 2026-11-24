@@ -63,6 +63,8 @@ export default defineConfig({
   // },
   lang: 'zh',
   publicPath:'./',
+  // 少量主题层面的微调（首屏按钮留白），见 theme/styles.css
+  globalStyles: path.join(__dirname, 'theme/styles.css'),
   // locales 为一个对象数组
   locales: [
     {
@@ -70,7 +72,7 @@ export default defineConfig({
       // 导航栏切换语言的标签
       label: 'English',
       title: 'TSGU-OSC',
-      description: 'TSGU-OSC',
+      description: 'Open Source Harmony Community at TSGUAS',
     },
     {
       lang: 'zh',
@@ -96,7 +98,7 @@ export default defineConfig({
         outlineTitle: 'ON THIS Page',
         lastUpdatedText: 'Last Updated',
         searchPlaceholderText: 'Search Docs',
-        description: 'TSGU-OSC',
+        description: 'Open Source Harmony Community at TSGUAS',
         label: ''
       },
       {
