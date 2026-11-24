@@ -2,7 +2,6 @@ node_modules
 .vscode
 doc_build
 *.zip
-root@47.236.99.121
 *.log
 .idea
 .workbuddy
